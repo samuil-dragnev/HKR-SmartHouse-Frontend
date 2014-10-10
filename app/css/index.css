@@ -1,0 +1,33 @@
+body {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+#leftBar {
+    line-height:30px;
+    width:20%;
+    float:left;
+    padding:1%;
+}
+#content {
+    width:78%;
+    float:right;
+    padding:1%;
+    
+}
+#logOutBtn {
+    float: right;
+    margin: 10px 10px 10px 10px;
+}
+.divider-vertical {
+    height: 50px;
+    margin: 0 9px;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #FFF;
+}
+
+#topBar, #bottomBar{
+	background-color: #428bca;
+	border-color: #357ebd;
+	color:#fff;
+
+} 
