@@ -5,11 +5,14 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/index.css">
+		<link href="css/bootstrap-switch.min.css" rel="stylesheet">
+		<script src="js/bootstrap-switch.min.js"></script>
+		<script src="js/indexswitchbutton.js"></script>
      </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topBar">
             <div class="container">
-               some stuff here
+                Username:
                 <button class="btn btn-sm btn-warning" name="logout" title="logout"  id="logOutBtn" >
                     <span class="glyphicon glyphicon-off"></span> Log Out
                 </button>
@@ -32,11 +35,12 @@
             </div>
         </div>
         <section id="content">
-            <div class="well well-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices interdum odio et pharetra. Nunc vitae nulla et ex gravida ornare vitae maximus tortor. Donec feugiat id lectus vel sagittis. Nunc eleifend mollis odio in mattis. Nulla viverra varius sapien non ultricies. Suspendisse erat mi, malesuada in urna in, egestas rutrum elit. Donec quis placerat dolor, at interdum turpis. Pellentesque et lectus ullamcorper sapien porttitor sagittis. Nulla sagittis ligula vel dui posuere sagittis. Donec et odio vel sem imperdiet lobortis. Maecenas in hendrerit velit, sit amet scelerisque arcu. Suspendisse nec varius mauris, ut consectetur purus. Curabitur sed felis blandit est faucibus gravida eu at mauris.
-
-                Donec sit amet massa porttitor, condimentum urna vel, consectetur felis. Curabitur rhoncus diam et urna vehicula, vel luctus lectus aliquam. In hac habitasse platea dictumst. Donec molestie ligula hendrerit ligula commodo, nec scelerisque elit blandit. Pellentesque non augue eget ex consectetur euismod at pulvinar dui. Donec luctus lacus quis maximus hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis tristique eleifend ex, et scelerisque lorem mattis sit amet. Nunc consequat vel est ac tempor. Morbi sagittis in lacus eu consequat. In consequat nunc sed est dictum, vitae rutrum diam iaculis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut non tincidunt tellus. Mauris ullamcorper, eros nec interdum dictum, lorem justo placerat nisi, in volutpat augue nibh at ligula. Ut ac maximus orci, ac semper felis.
-            </div>
+            
+				 <div class="btn-group btn-toggle"> 
+					<button class="btn btn-default">ON</button>
+					<button class="btn btn-primary active">OFF</button>
+					</div>
+          
         </section>
         <nav class="navbar navbar-default navbar-fixed-bottom" id="bottomBar" role="navigation">
             <div class="container">
