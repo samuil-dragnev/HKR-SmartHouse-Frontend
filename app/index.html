@@ -1,51 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="house-module">
     <head>
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-switch.min.css" >
+        <link rel="stylesheet" href="bower_components/bootstrap-vertical-tabs/bootstrap.vertical-tabs.css">
         <link rel="stylesheet" href="css/index.css">
-		<link href="css/bootstrap-switch.min.css" rel="stylesheet">
-		<script src="js/bootstrap-switch.min.js"></script>
-		<script src="js/indexswitchbutton.js"></script>
+        <!-- I moved the JavaScript Imports at the bottom of the <body>,
+            but the css should be up here -->
      </head>
-    <body>
+    <body  ng-controller="HouseController as houseCtrl">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topBar">
             <div class="container">
-                Username:
+                <span id="address">{{houseCtrl.info[0].address}}</span>
                 <button class="btn btn-sm btn-warning" name="logout" title="logout"  id="logOutBtn" >
                     <span class="glyphicon glyphicon-off"></span> Log Out
                 </button>
             </div>
         </nav>
-        <div id="leftBar">
-            <div class="panel panel-info">
-                <div class="panel-heading">Rooms</div>
-                <div class="panel-body">
-                    <ul class="nav nav-pills nav-stacked" >
-                        <li class="active"><a href="#">Room1</a></li>
-                        <li><a href="#">Room2</a></li>
-                        <li><a href="#">Room3</a></li>
-                        <li class="nav-divider"></li>
-                        <li><a href="#">Exterior</a></li>
-						<li class="nav-divider"></li>
-                        <li><a href="#">Alarms</a></li>
-                    </ul>
+        
+        <div id="leftBar" class="well">
+            <div class="col-xs-3">
+                <ul class="nav nav-tabs tabs-left sideways" id="op">
+                    <li class="active">
+                        <a ng-click="houseCtrl.setRoom(houseCtrl.lastRoom)" href="#interior" data-toggle="tab">Interior</a>
+                    </li>
+                    <li>
+                        <a ng-click="houseCtrl.setRoom({})" href="#exterior" data-toggle="tab">Exterior</a>
+                    </li>
+                    <li>
+                        <a ng-click="houseCtrl.setRoom({})" href="#alarms" data-toggle="tab">Alarms</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-9">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="interior"  ng-controller="PanelController as panelCtrl">
+                        <ul class="nav nav-pills nav-stacked" ng-repeat="room in houseCtrl.info[3].rooms">
+                            <li ng-class="{ active: panelCtrl.isSelected(room.selected)}">
+                                <a href="#" ng-click="panelCtrl.selectTab(room.selected); houseCtrl.setRoom(room)">{{room.name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="exterior" ng-controller="PanelController as panelCtrl">
+                        <ul class="nav nav-pills nav-stacked">
+                            <ul class="nav nav-pills nav-stacked" ng-repeat="out in houseCtrl.info[2].outside">
+                                <li ng-class="{ active: panelCtrl.isSelected(out.selected)}">
+                                    <a href="#" ng-click="panelCtrl.selectTab(out.selected);">{{out.name}}</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="alarms" ng-controller="PanelController as panelCtrl">
+                        <ul class="nav nav-pills nav-stacked">
+                            <ul class="nav nav-pills nav-stacked" ng-repeat="alarm in houseCtrl.info[1].alarms">
+                                <li ng-class="{ active: panelCtrl.isSelected(alarm.selected)};">
+                                    <a href="#" ng-click="panelCtrl.selectTab(alarm.selected);">{{alarm.name}}</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
         <section id="content">
-            
-				 <div class="btn-group btn-toggle"> 
-					<button class="btn btn-default">ON</button>
-					<button class="btn btn-primary active">OFF</button>
-					</div>
-          
+            <div ng-repeat="device in houseCtrl.room.devices">
+                <span>{{device.name}}</span>
+                <span>{{device.state}}</span>
+            </div>
+            <div class="btn-group btn-toggle"> 
+                <button class="btn btn-default">ON</button>
+                <button class="btn btn-primary active">OFF</button>
+            </div>
         </section>
         <nav class="navbar navbar-default navbar-fixed-bottom" id="bottomBar" role="navigation">
             <div class="container">
-                some stuff here
+                <span id="info">Some stuff</span>
             </div>
         </nav>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="js/bootstrap-switch.min.js"></script>
+        <script src="js/indexswitchbutton.js"></script>
+        <script src="js/house/app.js"></script>
     </body>
 </html>

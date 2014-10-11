@@ -1,0 +1,173 @@
+[
+    {
+        "address": "Street Name, Number Postcode City Name, Country"
+    },
+    {
+        "alarms": [
+            {
+                "name": "Door Alarm",
+                "state": true,
+                "selected": 1
+            },
+            {
+                "name": "Fire Alarm",
+                "state": false,
+                "selected": 2
+            },
+            {
+                "name": "Flood Alarm",
+                "state": false,
+                "selected": 3
+            },
+            {
+                "name": "Window Alarm",
+                "state": true,
+                "selected": 4
+            },
+            {
+                "name": "Security Alarm",
+                "state": false,
+                "selected": 5
+            }
+        ]
+    },
+    {
+        "outside": [
+            {
+                "name": "Front Door Light",
+                "state": false,
+                "selected": 1
+            },
+            {
+                "name": "Fountain",
+                "state": true,
+                "selected": 2
+            },
+            {
+                "name": "Pool Heating",
+                "state": false,
+                "selected": 3
+            }
+        ]
+    },
+    {
+        "rooms": [
+            {
+                "name": "Kitchen",
+                "devices": [
+                    {
+                        "name": "Oven",
+                        "state": false
+                    },
+                    {
+                        "name": "Fridge",
+                        "state": true
+                    },
+                    {
+                        "name": "Coffee Machine",
+                        "state": false
+                    },
+                    {
+                        "name": "lights",
+                        "state": false
+                    },
+                    {
+                        "name": "ventilation",
+                        "state": false
+                    }
+                ],
+                "selected": 1
+            },
+            {
+                "name": "Living Room",
+                "devices": [
+                    {
+                        "name": "TV",
+                        "state": false
+                    },
+                    {
+                        "name": "Lights",
+                        "state": false
+                    },
+                    {
+                        "name": "Fire Place",
+                        "state": false
+                    }
+                ],
+                "selected": 2
+            },
+            {
+                "name": "Master Bedroom",
+                "devices": [
+                    {
+                        "name": "Lights",
+                        "state": false
+                    },
+                    {
+                        "name": "TV",
+                        "state": false
+                    },
+                    {
+                        "name": "Vibrating Bed",
+                        "state": true
+                    }
+                ],
+                "selected": 3
+            },
+            {
+                "name": "Kids Bedroom",
+                "devices": [
+                    {
+                        "name": "Lights",
+                        "state": false
+                    },
+                    {
+                        "name": "TV",
+                        "state": false
+                    },
+                    {
+                        "name": "Computer",
+                        "state": false
+                    }
+                ],
+                "selected": 4
+            },
+            {
+                "name": "Office",
+                "devices": [
+                    {
+                        "name": "Lights",
+                        "state": false
+                    },
+                    {
+                        "name": "Computer",
+                        "state": false
+                    },
+                    {
+                        "name": "Fountain",
+                        "state": true
+                    }
+                ],
+                "selected": 5
+            },
+            {
+                "name": "Basement",
+                "devices": [
+                    {
+                        "name": "Lights",
+                        "state": false
+                    },
+                    {
+                        "name": "Washing Machine",
+                        "state": true
+                    },
+                    {
+                        "name": "Dryer Machine",
+                        "state": true
+                    }
+                ],
+                "selected": 6
+            }
+        ]
+    }
+]
