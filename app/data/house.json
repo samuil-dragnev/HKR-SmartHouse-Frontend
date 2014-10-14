@@ -57,23 +57,28 @@
                 "devices": [
                     {
                         "name": "Oven",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "Fridge",
-                        "state": true
+                        "state": true,
+                        "image": ""
                     },
                     {
                         "name": "Coffee Machine",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "lights",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "ventilation",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     }
                 ],
                 "selected": 1
@@ -83,15 +88,18 @@
                 "devices": [
                     {
                         "name": "TV",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "Lights",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "Fire Place",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     }
                 ],
                 "selected": 2
@@ -101,15 +109,18 @@
                 "devices": [
                     {
                         "name": "Lights",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "TV",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "Vibrating Bed",
-                        "state": true
+                        "state": true,
+                        "image": ""
                     }
                 ],
                 "selected": 3
@@ -119,15 +130,18 @@
                 "devices": [
                     {
                         "name": "Lights",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "TV",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "Computer",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     }
                 ],
                 "selected": 4
@@ -137,15 +151,18 @@
                 "devices": [
                     {
                         "name": "Lights",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "Computer",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "Fountain",
-                        "state": true
+                        "state": true,
+                        "image": ""
                     }
                 ],
                 "selected": 5
@@ -155,15 +172,18 @@
                 "devices": [
                     {
                         "name": "Lights",
-                        "state": false
+                        "state": false,
+                        "image": ""
                     },
                     {
                         "name": "Washing Machine",
-                        "state": true
+                        "state": true,
+                        "image": ""
                     },
                     {
                         "name": "Dryer Machine",
-                        "state": true
+                        "state": true,
+                        "image": ""
                     }
                 ],
                 "selected": 6

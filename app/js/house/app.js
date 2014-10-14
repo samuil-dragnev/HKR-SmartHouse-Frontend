@@ -14,7 +14,7 @@
         };
         
         house.info = [];
-        $http.get("data/house.json").success(function (data) {
+        $http.get("data\\house.json").success(function (data) {
             house.info = data;
         });
     } ]);

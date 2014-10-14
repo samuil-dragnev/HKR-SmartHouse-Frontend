@@ -5,14 +5,16 @@ body {
 
 #leftBar {
     line-height:30px;
-    width:25%;
+    width:20%;
     float:left;
     padding-bottom: 8%;
     margin-left: 1%;
 }
 #content {
     width:70%;
-    float:right;
+    float:left;
+	padding-left:10%;
+	padding-top:10%;
 }
 #logOutBtn {
     float: right;
@@ -29,3 +31,17 @@ body {
 	border-color: #357ebd;
 	color:#fff;
 } 
+.caption>h3 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+.caption>div>div {
+    margin-left: 25%;
+    margin-right: 25%;
+    
+}
+.images>div {
+    margin-left: 40%;
+    margin-right: 40%;
+}

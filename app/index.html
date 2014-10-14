@@ -64,12 +64,31 @@
         </div>
         <section id="content">
             <div ng-repeat="device in houseCtrl.room.devices">
-                <span>{{device.name}}</span>
-                <span>{{device.state}}</span>
-            </div>
-            <div class="btn-group btn-toggle"> 
-                <button class="btn btn-default">ON</button>
-                <button class="btn btn-primary active">OFF</button>
+                <div class="row-horizontal">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail" ng-switch="device.state">
+                            <div class="images">
+                                <div class="image1" ng-switch-when="true">
+                                    <img src="img/lampon.jpg" alt="lampon" height="42" width="42">
+                                </div>
+                                <div class="image2" ng-switch-when="false">
+                                    <img src="img/lampoff.jpg" alt="lampon" height="42" width="42">
+                                </div>
+                            </div>                            
+                            <div class="caption" >
+                                <h3>{{device.name}}</h3>
+                                <div>
+                                    <div class="btn-group btn-toggle"> 
+                                    <button ng-class="{'active btn-primary': device.state}" 
+                                        ng-click="device.state = true" class="btn btn-default">ON</button>
+                                    <button ng-class="{'active btn-primary' : !device.state}"
+                                            ng-click="device.state = false" class="btn btn-default">OFF</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <nav class="navbar navbar-default navbar-fixed-bottom" id="bottomBar" role="navigation">
@@ -81,7 +100,7 @@
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="js/bootstrap-switch.min.js"></script>
-        <script src="js/indexswitchbutton.js"></script>
+      
         <script src="js/house/app.js"></script>
     </body>
 </html>
