@@ -79,6 +79,26 @@
                         "name": "ventilation",
                         "state": false,
                         "image": ""
+                    },
+                    {
+                        "name": "Fridge",
+                        "state": true,
+                        "image": ""
+                    },
+                    {
+                        "name": "Fridge",
+                        "state": true,
+                        "image": ""
+                    },
+                    {
+                        "name": "Fridge",
+                        "state": true,
+                        "image": ""
+                    },
+                    {
+                        "name": "Fridge",
+                        "state": true,
+                        "image": ""
                     }
                 ],
                 "selected": 1
