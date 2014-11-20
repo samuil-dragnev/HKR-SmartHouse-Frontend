@@ -1,32 +1,54 @@
 <!doctype html> 
 <html ng-app="house-module">
-<head>
-	<script src="bower_components\jquery\dist\jquery.min.js"></script>
-	<title>WebApp Log in</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
-	<link rel="stylesheet" href="css\login.css">
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script src="js/house/app.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
-	
-</head>
-<body>
-	<div class="container">
+    <head>
+        <script src="bower_components\jquery\dist\jquery.min.js"></script>
+        <title>WebApp Log in</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
+        <link rel="stylesheet" href="css\login.css">
 
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="form-control" placeholder="Username" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="js/bootstrap-switch.min.js"></script>
+        <script src="js/house/app.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
 
-    </div> <!-- /container -->
-</body>
+    </head>
+    <body>
+        <div class="con">
+            <div class="container" ng-controller="HouseController">
+
+                <form class="form-signin" role="form" ng-submit="submit()">
+                    <h2 class="form-signin-heading">Please sign in</h2>
+                    <input type="text" class="form-control" placeholder="Username" required autofocus>
+                    <input type="password" class="form-control" placeholder="Password" required>
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                    <button class="btn btn-lg btn-primary btn-block" ng-click="submit();" type="submit">Sign in</button>
+                </form>
+
+            </div>
+            <div class= "imgcontainer" >
+                <div class="circle-container">
+                    <div title="Projet logo" style="background-color:#FFFFFF;color:#0000000;text-decoration:none" href='#' class='center'><img src='img/logo.png' ></div>
+                    <div href='#' class='deg0'><img src='img/Alarms.png'>
+                        <p class="imgDescription">This image looks super neat.</p>
+                    </div>
+                    <div href='#' class='deg45'><img src='img/Environment.png'></div>
+                    <div href='#' class='deg135'><img src='img/Laptop.png'></div>
+                    <div href='#' class='deg180'><img src='img/Music.png'></div>
+                    <div href='#' class='deg225'><img src='img/Power.png'></div>
+                    <div href='#' class='deg315'><img src='img/WaterLeckage.png'></div>
+                    <div href='#' class='deg270'><img src='img/Something.png'></div>
+                    <div href='#' class='deg90'><img src='img/Sun.png'></div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
 
 </html>
