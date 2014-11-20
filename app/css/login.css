@@ -1,4 +1,80 @@
-.container{margin-left: auto;
-    margin-right: auto;
-	margin-top: 10%;
-    width: 35%;}
+.container{
+    float: left;
+    width: 20%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+html{
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    
+    background: -webkit-linear-gradient(blue, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(blue, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(blue, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(blue, white); /* Standard syntax (must be last) */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.imgcontainer{ 
+    margin-top: 5%;
+    margin-left: 10%;
+    padding-top: 3%;
+    padding-left: 30%;
+    
+}
+
+.imgDescription {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.72);
+    color: #aaa;
+    width:100;
+
+
+    visibility: hidden;
+    opacity: 0;
+
+    /*remove comment if you want a gradual transition between states
+    -webkit-transition: visibility opacity 0.2s;
+    */
+}
+
+
+.deg0:hover .imgDescription {
+    visibility: visible;
+    opacity: 1;
+}
+
+.circle-container {
+    position: relative;
+    width: 24em;
+    height: 24em;
+    padding: 2.8em;
+    /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+    border: dashed 1px;
+    border-radius: 50%;
+    margin: 1.75em auto 0;
+}
+.circle-container div {
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4em; height: 4em;
+    margin: -2em;
+}
+.circle-container img { display: block; width: 100%; }
+.deg0 { transform: translate(12em); } /* 12em = half the width of the wrapper */
+.deg90 {  transform: rotate(90deg) translate(12em) rotate(-90deg); } /* 12em = half the width of the wrapper */
+.deg270 {  transform: rotate(270deg) translate(12em) rotate(-270deg); } /* 12em = half the width of the wrapper */
+.deg45 { transform: rotate(45deg) translate(12em) rotate(-45deg); }
+.deg135 { transform: rotate(135deg) translate(12em) rotate(-135deg); }
+.deg180 { transform: translate(-12em); }
+.deg225 { transform: rotate(225deg) translate(12em) rotate(-225deg); }
+.deg315 { transform: rotate(315deg) translate(12em) rotate(-315deg); }
