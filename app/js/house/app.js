@@ -1,46 +1,40 @@
 (function () {
-    var app = angular.module('house-module', []).
-        config('routeProvider', function ($routeProvider) {
-           $routeProvider
+    var app = angular.module('house-module', ['ngRoute']);
+    app.config(['$routeProvider',
+        function ($routeProvider) {
+        $routeProvider
             .when('/', {
-               controller: 'HouseController',
+                controller: 'HouseController',
                 templateUrl: 'login.html'
             }).when('/house/', {
-               controller: 'HouseController',
-                templateUrl: 'index.html'
+                controller: 'HouseController',
+                templateUrl: 'main.html'
             }).otherwise({redirectTo: 'login.html'})
-           
-            
-        });
-    app.controller('HouseController', [ '$http', '$log', function ($http, $log) {
-        var house = this;
-        this.room = {};
-        this.lastRoom = {};
-        this.setRoom = function (room) {
+    }]);
+    app.controller('HouseController', [ '$http', '$scope', function ($http,$scope){
+        $scope.room = {};
+        $scope.lastRoom = {};
+        $scope.setRoom = function (room) {
             if (jQuery.isEmptyObject(room)) {
                 //Do nothing
             } else {
-                this.lastRoom = room;
+                $scope.lastRoom = room;
             }
-            this.room = room;
+            $scope.room = room;
         };
         
-        house.info = [];
-        $http.get("data\\house.json").success(function (data) {
-            house.info = data;
+        $scope.house = [];
+        $http.get("data//house.json").success(function (data) {
+            $scope.house = data;
         });
         
-        this.tab = 0;
-        this.selectTab = function (setTab) {
-            this.tab = setTab;
+        $scope.tab = 0;
+        $scope.selectTab = function (setTab) {
+            $scope.tab = setTab;
         };
 
-        this.isSelected = function (checkTab) {
-            return this.tab === checkTab;
+        $scope.isSelected = function (checkTab) {
+            return $scope.tab === checkTab;
         };
     } ]);
-    app.controller('PanelController', function () {
-        
-    });
-    
 })();

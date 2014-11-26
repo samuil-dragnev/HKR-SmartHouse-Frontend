@@ -1,112 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="house-module">
-    <head profile="http://www.w3.org/2005/10/profile">
-        <link rel="icon" 
-              type="image/png" 
-              href="file:///C:/Users/Joel/Dropbox/SmartHouseProjcet%20kopia/logo1.ico">
     <head>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-switch.min.css" >
         <link rel="stylesheet" href="css/index.css">
-       
+
         <link rel="icon" type="image/png" href="img/icon.png">
-        <!-- I moved the JavaScript Imports at the bottom of the <body>,
-            but the css should be up here -->
-     </head>
-    <body ng-controller="HouseController as houseCtrl">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topBar">
-            <div class="container">
-                <span id="address">{{houseCtrl.info[0].address}}</span>
-                <button class="btn btn-sm btn-warning" name="logout" title="logout"  id="logOutBtn" >
-                    <span class="glyphicon glyphicon-off"></span> Log Out
-                </button>
-            </div>
-        </nav>
-        
-        <div id="leftBar" class="well">
-            <div>
-                <ul class="nav nav-tabs" id="op">
-                    <li class="active" role="presentation">
-                        <a ng-click="houseCtrl.setRoom(houseCtrl.lastRoom)" href="#interior" data-toggle="tab">Interior</a>
-                    </li>
-                    <li role="presentation">
-                        <a ng-click="houseCtrl.setRoom({})" href="#exterior" data-toggle="tab">Exterior</a>
-                    </li>
-                    <li role="presentation">
-                        <a ng-click="houseCtrl.setRoom({})" href="#alarms" data-toggle="tab">Alarms</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-xs-9">
-                <div class="tab-content">
-                    <div class="tab-pane active" id="interior"  ng-controller="PanelController as panelCtrl">
-                        <ul class="nav nav-pills nav-stacked" ng-repeat="room in houseCtrl.info[3].rooms">
-                            <li ng-class="{ active: panelCtrl.isSelected(room.selected)}">
-                                <a href="#" ng-click="panelCtrl.selectTab(room.selected); houseCtrl.setRoom(room)">{{room.name}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane" id="exterior" ng-controller="PanelController as panelCtrl">
-                        <ul class="nav nav-pills nav-stacked">
-                            <ul class="nav nav-pills nav-stacked" ng-repeat="out in houseCtrl.info[2].outside">
-                                <li ng-class="{ active: panelCtrl.isSelected(out.selected)}">
-                                    <a href="#" ng-click="panelCtrl.selectTab(out.selected);">{{out.name}}</a>
-                                </li>
-                            </ul>
-                        </ul>
-                    </div>
-                    <div class="tab-pane" id="alarms" ng-controller="PanelController as panelCtrl">
-                        <ul class="nav nav-pills nav-stacked">
-                            <ul class="nav nav-pills nav-stacked" ng-repeat="alarm in houseCtrl.info[1].alarms">
-                                <li ng-class="{ active: panelCtrl.isSelected(alarm.selected)};">
-                                    <a href="#" ng-click="panelCtrl.selectTab(alarm.selected);">{{alarm.name}}</a>
-                                </li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section id="content">
-            <div ng-repeat="device in houseCtrl.room.devices">
-                <div class="row-horizontal">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail" ng-switch="device.state">
-                            <div class="images">
-                                <div class="image1" ng-switch-when="true">
-                                    <img src="img/lampon.jpg" alt="lampon" height="42" width="42">
-                                </div>
-                                <div class="image2" ng-switch-when="false">
-                                    <img src="img/lampoff.jpg" alt="lampon" height="42" width="42">
-                                </div>
-                            </div>                            
-                            <div class="caption" >
-                                <h3>{{device.name}}</h3>
-                                <div>
-                                    <div class="btn-group btn-toggle"> 
-                                    <button ng-class="{'active btn-primary': device.state}" 
-                                        ng-click="device.state = true" class="btn btn-default">ON</button>
-                                    <button ng-class="{'active btn-primary' : !device.state}"
-                                            ng-click="device.state = false" class="btn btn-default">OFF</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <nav class="navbar navbar-default navbar-fixed-bottom" id="bottomBar" role="navigation">
-            <div class="container">
-                <span id="info">Some stuff</span>
-            </div>
-        </nav>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
         <script src="js/bootstrap-switch.min.js"></script>
-      
+
         <script src="js/house/app.js"></script>
+    </head>
+    <body>
+        <div ng-view></div>
     </body>
 </html>

@@ -1,0 +1,86 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topBar">
+    <div class="container">
+        <span id="address">{{house[0].address}}</span>
+        <button class="btn btn-sm btn-warning" name="logout" title="logout" id="logOutBtn">
+            <span class="glyphicon glyphicon-off"></span> Log Out
+        </button>
+    </div>
+</nav>
+
+<div id="leftBar" class="well">
+    <div>
+        <ul class="nav nav-tabs" id="op">
+            <li class="active" role="presentation">
+                <a ng-click="setRoom(lastRoom)" name="interior" data-toggle="tab">Interior</a>
+            </li>
+            <li role="presentation">
+                <a ng-click="setRoom({})" name="exterior" data-toggle="tab">Exterior</a>
+            </li>
+            <li role="presentation">
+                <a ng-click="setRoom({})" name="alarms" data-toggle="tab">Alarms</a>
+            </li>
+        </ul>
+    </div>
+    <div id="tabs">
+        <div class="tab-content">
+            <div class="tab-pane active" id="interior">
+                <ul class="nav nav-pills nav-stacked" ng-repeat="room in house[3].rooms">
+                    <li ng-class="{ active: isSelected(room.selected)}">
+                        <a ng-click="selectTab(room.selected); setRoom(room)">{{room.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="exterior">
+                <ul class="nav nav-pills nav-stacked" ng-repeat="out in house[2].outside">
+                    <li ng-class="{ active: isSelected(out.selected)}">
+                        <a ng-click="selectTab(out.selected);">{{out.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="alarms">
+                <ul class="nav nav-pills nav-stacked" ng-repeat="alarm in house[1].alarms">
+                    <li ng-class="{ active: isSelected(alarm.selected)};">
+                        <a ng-click="selectTab(alarm.selected);">{{alarm.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="content">
+    <div ng-repeat="device in room.devices">
+        <div class="row-horizontal">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail" ng-switch="device.state">
+                    <div class="images">
+                        <div class="image1" ng-switch-when="true">
+                            <img src="img/lampon.jpg" alt="lampon" height="42" width="42">
+                        </div>
+                        <div class="image2" ng-switch-when="false">
+                            <img src="img/lampoff.jpg" alt="lampon" height="42" width="42">
+                        </div>
+                    </div>
+                    <div class="caption">
+                        <h3>{{device.name}}</h3>
+
+                        <div>
+                            <div class="btn-group btn-toggle">
+                                <button ng-class="{'active btn-primary': device.state}"
+                                        ng-click="device.state = true" class="btn btn-default">ON
+                                </button>
+                                <button ng-class="{'active btn-primary' : !device.state}"
+                                        ng-click="device.state = false" class="btn btn-default">OFF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<nav class="navbar navbar-default navbar-fixed-bottom" id="bottomBar" role="navigation">
+    <div class="container">
+        <span id="info">Some stuff</span>
+    </div>
+</nav>

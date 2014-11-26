@@ -2,12 +2,13 @@ body {
     padding-bottom: 60px;
     padding-top: 60px;
 }
-.col-xs-9 {
-    margin-top: 5%;   
+#tabs {
+    margin-top: 5%;
+    padding-right: 35%;
 }
 #leftBar {
     line-height:30px;
-    width:25%;
+    width:22%;
     float:left;
     padding-bottom: 8%;
     margin-left: 1%;
