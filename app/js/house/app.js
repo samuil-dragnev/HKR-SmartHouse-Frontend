@@ -1,15 +1,19 @@
 (function () {
     var app = angular.module('house-module', ['ngRoute']);
-    app.config(['$routeProvider',
-        function ($routeProvider) {
-        $routeProvider
-            .when('/', {
-                controller: 'HouseController',
-                templateUrl: 'login.html'
-            }).when('/house/', {
-                controller: 'HouseController',
-                templateUrl: 'main.html'
-            }).otherwise({redirectTo: 'login.html'})
+    app.config(['$routeProvider','$locationProvider',
+        function ($routeProvider,$locationProvider) {
+
+            $locationProvider
+                .html5Mode(true);
+            $routeProvider
+                .when('/', {
+                    controller: 'HouseController',
+                    templateUrl: 'login.html'
+                }).when('/house/', {
+                    controller: 'HouseController',
+                    templateUrl: 'main.html'
+                }).otherwise({redirectTo: 'login.html'});
+
     }]);
     app.controller('HouseController', [ '$http', '$scope', function ($http,$scope){
         $scope.room = {};
