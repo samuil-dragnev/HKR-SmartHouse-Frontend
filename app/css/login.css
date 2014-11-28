@@ -61,6 +61,21 @@ body {
     border: dashed 1px;
     border-radius: 50%;
     margin: 1.75em auto 0;
+
+    -webkit-animation-name: opas;
+    -webkit-animation-duration: 6000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes opas{
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+
+@-webkit-keyframes op{
+    from { -webkit-transform: rotate(360deg); }
+    to { -webkit-transform: rotate(0deg); }
 }
 .circle-container div {
     display: block;
@@ -69,7 +84,12 @@ body {
     width: 4em; height: 4em;
     margin: -2em;
 }
-.circle-container img { display: block; width: 100%; }
+.circle-container img { display: block; width: 100%;
+    -webkit-animation-name: op;
+    -webkit-animation-duration: 6000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
 .deg0 { transform: translate(12em); } /* 12em = half the width of the wrapper */
 .deg90 {  transform: rotate(90deg) translate(12em) rotate(-90deg); } /* 12em = half the width of the wrapper */
 .deg270 {  transform: rotate(270deg) translate(12em) rotate(-270deg); } /* 12em = half the width of the wrapper */

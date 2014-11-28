@@ -1,21 +1,20 @@
 (function () {
-    var app = angular.module('house-module', ['ngRoute']);
-    app.config(['$routeProvider','$locationProvider',
-        function ($routeProvider,$locationProvider) {
-
-            $locationProvider
-                .html5Mode(true);
+    var app = angular.module('house-module', ['ngRoute', 'routeStyles']);
+    app.config(['$routeProvider', '$locationProvider',
+        function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/', {
-                    controller: 'HouseController',
-                    templateUrl: 'login.html'
+                    controller: 'LoginController',
+                    templateUrl: 'login.html',
+                    css: 'css/login.css'
                 }).when('/house/', {
                     controller: 'HouseController',
-                    templateUrl: 'main.html'
-                }).otherwise({redirectTo: 'login.html'});
-
+                    templateUrl: 'main.html',
+                    css: 'css/index.css'
+                }).otherwise({redirectTo: '/'});
+            $locationProvider.html5Mode(true);
     }]);
-    app.controller('HouseController', [ '$http', '$scope', function ($http,$scope){
+    app.controller('HouseController', [ '$http', '$scope', function ($http, $scope) {
         $scope.room = {};
         $scope.lastRoom = {};
         $scope.setRoom = function (room) {
@@ -41,4 +40,8 @@
             return $scope.tab === checkTab;
         };
     } ]);
+
+    app.controller('LoginController', ['$scope', function ($scope) {
+
+    }]);
 })();

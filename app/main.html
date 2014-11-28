@@ -9,7 +9,7 @@
 
 <div id="leftBar" class="well">
     <div>
-        <ul class="nav nav-tabs" id="op">
+            <ul class="nav nav-tabs" id="op">
             <li class="active" role="presentation">
                 <a ng-click="setRoom(lastRoom)" name="interior" data-toggle="tab">Interior</a>
             </li>
@@ -54,10 +54,10 @@
                 <div class="thumbnail" ng-switch="device.state">
                     <div class="images">
                         <div class="image1" ng-switch-when="true">
-                            <img src="img/lampon.jpg" alt="lampon" height="42" width="42">
+                            <img src="img/lampon.jpg" alt="Device On" height="42" width="42">
                         </div>
                         <div class="image2" ng-switch-when="false">
-                            <img src="img/lampoff.jpg" alt="lampon" height="42" width="42">
+                            <img src="img/lampoff.jpg" alt="Device Off" height="42" width="42">
                         </div>
                     </div>
                     <div class="caption">
