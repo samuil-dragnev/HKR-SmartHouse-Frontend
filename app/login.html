@@ -1,6 +1,6 @@
 <div class="con">
 
-    <div class="container well"  ng-controller="HouseController">
+    <div class="container well">
 
 
         <form class="form-signin" role="form" ng-submit="submit()">
@@ -10,7 +10,7 @@
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
-            <button class="btn btn-lg btn-primary btn-block" ng-click="submit();" type="submit">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
 
     </div>
@@ -28,4 +28,25 @@
         </div>
 
     </div>
+
+    <div class="houseselector well"  ng-controller="HouseController">
+
+
+        <form class="form-selecthouse" role="form" ng-submit="selecthouse()">
+            <h2 class="form-signin-heading">Please Select House</h2>
+            <ul>
+                <select size="6" name="selectionField" multiple="yes" >
+                    <option value="CA" >House 1</option>
+                    <option value="CO" >House 2</option>
+                    <option value="CN" >House 3</option>
+                    <option value="CA" >House 1</option>
+                    <option value="CO" >House 2</option>
+                    <option value="CN" >House 3</option>
+                </select>
+            </ul>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Select</button>
+        </form>
+
+    </div>
+
 </div>

@@ -41,7 +41,10 @@
         };
     } ]);
 
-    app.controller('LoginController', ['$scope', function ($scope) {
+    app.controller('LoginController', ['$scope', "$location", function ($scope,$location) {
+        $scope.submit = function(){
 
+            $location.path("/house");
+        }
     }]);
 })();

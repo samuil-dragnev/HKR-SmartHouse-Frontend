@@ -41,30 +41,39 @@ body {
     padding-left: 30%;
     
 }
+.houseselector select option:hover {
+    background-color: #002a80;
+    color: #ffffff;
 
-.imgDescription {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.72);
-    color: #aaa;
-    width:100%;
-
-
-    visibility: hidden;
-    opacity: 0;
-
-    /*remove comment if you want a gradual transition between states
-    -webkit-transition: visibility opacity 0.2s;
-    */
 }
-
-
-.deg0:hover .imgDescription {
-    visibility: visible;
-    opacity: 1;
+.houseselector select{
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+}
+.houseselector ul {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.houseselector {
+    float: left;
+    height: 40%;
+    width: 25%;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    border: solid 1px #555;
+    background-color: #eed;
+    box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+    -moz-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+    -o-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
 }
 
 .circle-container {
