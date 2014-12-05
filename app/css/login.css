@@ -59,6 +59,7 @@ body {
     width: 100%;
 }
 .houseselector {
+    display: none;
     float: left;
     height: 40%;
     width: 25%;

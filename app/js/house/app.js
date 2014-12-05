@@ -1,3 +1,4 @@
+
 (function () {
     var app = angular.module('house-module', ['ngRoute', 'routeStyles']);
     app.config(['$routeProvider', '$locationProvider',
@@ -44,7 +45,7 @@
     app.controller('LoginController', ['$scope', "$location", function ($scope,$location) {
         $scope.submit = function(){
 
-            $location.path("/house");
+           // $location.path("/house");
         }
     }]);
 })();

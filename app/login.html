@@ -1,6 +1,7 @@
+
 <div class="con">
 
-    <div class="container well">
+    <div id="logincontainer" class="container well">
 
 
         <form class="form-signin" role="form" ng-submit="submit()">
@@ -10,26 +11,11 @@
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <button id="loginbutton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
 
     </div>
-    <div class= "imgcontainer" >
-        <div class="circle-container">
-            <div title="Projet logo" class='center'><img src='img/logo.png' ></div>
-            <div class='deg0'><img src='img/Alarms.png'></div>
-            <div class='deg45'><img src='img/Environment.png'></div>
-            <div class='deg90'><img src='img/Sun.png'></div>
-            <div class='deg135'><img src='img/Laptop.png'></div>
-            <div class='deg180'><img src='img/Music.png'></div>
-            <div class='deg225'><img src='img/Power.png'></div>
-            <div class='deg270'><img src='img/Something.png'></div>
-            <div class='deg315'><img src='img/WaterLeckage.png'></div>
-        </div>
-
-    </div>
-
-    <div class="houseselector well"  ng-controller="HouseController">
+    <div id="housesel" class="houseselector well"  ng-controller="HouseController">
 
 
         <form class="form-selecthouse" role="form" ng-submit="selecthouse()">
@@ -48,5 +34,22 @@
         </form>
 
     </div>
+    <div class= "imgcontainer" >
+        <div class="circle-container">
+            <div title="Projet logo" class='center'><img src='img/logo.png' ></div>
+            <div class='deg0'><img src='img/Alarms.png'></div>
+            <div class='deg45'><img src='img/Environment.png'></div>
+            <div class='deg90'><img src='img/Sun.png'></div>
+            <div class='deg135'><img src='img/Laptop.png'></div>
+            <div class='deg180'><img src='img/Music.png'></div>
+            <div class='deg225'><img src='img/Power.png'></div>
+            <div class='deg270'><img src='img/Something.png'></div>
+            <div class='deg315'><img src='img/WaterLeckage.png'></div>
+        </div>
+
+    </div>
+
+
 
 </div>
+<script src="js/login.js"></script>
