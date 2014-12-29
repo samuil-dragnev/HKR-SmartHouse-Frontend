@@ -1,54 +1,56 @@
+<div class="con well">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <div id="logincontainer" class="container well">
+                        <form class="form-signin" role="form" ng-submit="submit()">
+                            <h2 class="form-signin-heading">Please sign in</h2>
+                            <input type="text" class="form-control" placeholder="Username" required autofocus>
+                            <input type="password" class="form-control" placeholder="Password" required>
+                            <label class="checkbox">
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                            <button id="loginbutton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        </form>
+                    </div>
+                    <div id="housesel" class="houseselector well" ng-controller="HouseController">
+                        <form class="form-selecthouse" role="form" ng-submit="selecthouse()">
+                            <h2 class="form-signin-heading">Please Select House</h2>
+                            <ul>
+                                <select size="6" name="selectionField" multiple="yes">
+                                    <option value="CA">House 1</option>
+                                    <option value="CO">House 2</option>
+                                    <option value="CN">House 3</option>
+                                    <option value="CA">House 1</option>
+                                    <option value="CO">House 2</option>
+                                    <option value="CN">House 3</option>
+                                </select>
+                            </ul>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Select</button>
+                        </form>
 
-<div class="con">
+                    </div>
+                </td>
+                <td>
+                    <div class="imgcontainer">
+                        <div class="circle-container">
+                            <div title="Projet logo" class='center'><img src='img/logo.png'></div>
+                            <div class='deg0'><img src='img/Alarms.png'></div>
+                            <div class='deg45'><img src='img/Environment.png'></div>
+                            <div class='deg90'><img src='img/Sun.png'></div>
+                            <div class='deg135'><img src='img/Laptop.png'></div>
+                            <div class='deg180'><img src='img/Music.png'></div>
+                            <div class='deg225'><img src='img/Power.png'></div>
+                            <div class='deg270'><img src='img/Something.png'></div>
+                            <div class='deg315'><img src='img/WaterLeckage.png'></div>
+                        </div>
 
-    <div id="logincontainer" class="container well">
-
-
-        <form class="form-signin" role="form" ng-submit="submit()">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <input type="text" class="form-control" placeholder="Username" required autofocus>
-            <input type="password" class="form-control" placeholder="Password" required>
-            <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-            <button id="loginbutton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-
-    </div>
-    <div id="housesel" class="houseselector well"  ng-controller="HouseController">
-
-
-        <form class="form-selecthouse" role="form" ng-submit="selecthouse()">
-            <h2 class="form-signin-heading">Please Select House</h2>
-            <ul>
-                <select size="6" name="selectionField" multiple="yes" >
-                    <option value="CA" >House 1</option>
-                    <option value="CO" >House 2</option>
-                    <option value="CN" >House 3</option>
-                    <option value="CA" >House 1</option>
-                    <option value="CO" >House 2</option>
-                    <option value="CN" >House 3</option>
-                </select>
-            </ul>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Select</button>
-        </form>
-
-    </div>
-    <div class= "imgcontainer" >
-        <div class="circle-container">
-            <div title="Projet logo" class='center'><img src='img/logo.png' ></div>
-            <div class='deg0'><img src='img/Alarms.png'></div>
-            <div class='deg45'><img src='img/Environment.png'></div>
-            <div class='deg90'><img src='img/Sun.png'></div>
-            <div class='deg135'><img src='img/Laptop.png'></div>
-            <div class='deg180'><img src='img/Music.png'></div>
-            <div class='deg225'><img src='img/Power.png'></div>
-            <div class='deg270'><img src='img/Something.png'></div>
-            <div class='deg315'><img src='img/WaterLeckage.png'></div>
-        </div>
-
-    </div>
-
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 
 </div>

@@ -1,9 +1,7 @@
 .container{
     float: left;
-    width: 25%;
+    width: 80%;
     margin-left: 10%;
-    margin-top: 5%;
-    margin-bottom: 5%;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
@@ -16,6 +14,25 @@
 }
 html{
     height: 100%;
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin: 10% auto 5% auto;
+}
+
+.ng-scope .con {
+    position: fixed;
+    width: 90%;
+    height: 100%;
+    margin: 0 5% 0 5%;
+    bottom: 0;
+}
+tr {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .checkbox{
     margin-left: auto;
@@ -25,7 +42,8 @@ html{
 body {
     height: 100%;
     margin: 0;
-    
+    padding: 0 0 0 0;
+
     background: -webkit-linear-gradient(blue, white); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(blue, white); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(blue, white); /* For Firefox 3.6 to 15 */
@@ -34,12 +52,8 @@ body {
     background-attachment: fixed;
 }
 
-.imgcontainer{ 
-    margin-top: 5%;
+.imgcontainer{
     margin-left: 10%;
-    padding-top: 3%;
-    padding-left: 30%;
-    
 }
 .houseselector select option:hover {
     background-color: #002a80;
@@ -61,11 +75,9 @@ body {
 .houseselector {
     display: none;
     float: left;
-    height: 40%;
-    width: 25%;
+    height: 100%;
+    width: 80%;
     margin-left: 10%;
-    margin-top: 5%;
-    margin-bottom: 5%;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
