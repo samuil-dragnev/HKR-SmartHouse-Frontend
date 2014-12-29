@@ -17,9 +17,28 @@ html{
     text-align: center;
 }
 
+.header-con.well {
+    text-align: center;
+    width: 100%;
+}
+
+.header span {
+    font-size: 35px;
+    font-style: oblique;
+    vertical-align: middle;
+}
+
+.con.well {
+    border-right: 10px solid rgba(0,0,0,0.4);
+    border-left: 10px solid rgba(0,0,0,0.4);
+    padding: 0 0 0 0;
+    /*border-right: solid 10px rgba(160,160,160,0.5) ; */
+    background-color: rgba(0,128,255,0.9) ;
+}
+
 table {
     width: 80%;
-    margin: 10% auto 5% auto;
+    margin: 4% auto 4% auto;
 }
 
 .ng-scope .con {
@@ -43,17 +62,12 @@ body {
     height: 100%;
     margin: 0;
     padding: 0 0 0 0;
-
-    background: -webkit-linear-gradient(blue, white); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(blue, white); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(blue, white); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(blue, white); /* Standard syntax (must be last) */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #ffffff url("../img/background.jpg") no-repeat right top;
 }
 
 .imgcontainer{
-    margin-left: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .houseselector select option:hover {
     background-color: #002a80;
@@ -90,14 +104,13 @@ body {
 }
 
 .circle-container {
-    position: relative;
     width: 24em;
     height: 24em;
-    padding: 2.8em;
     /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
-    border: dashed 1px;
+    border: 1px;
     border-radius: 50%;
-    margin: 1.75em auto 0;
+    background-color: rgba(224,224,224, 0.7);
+    margin: auto auto auto auto;
 
     -webkit-animation-name: opas;
     -webkit-animation-duration: 6000ms;
