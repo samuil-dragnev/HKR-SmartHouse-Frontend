@@ -13,26 +13,53 @@
     -o-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
 }
 html{
-    height: 100%;
-    text-align: center;
+     height: 100%;
+     text-align: center;
+ }
+
+.form-control.ng-invalid {
+    border-color: rgb(237, 19, 55);
+    box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset, rgba(237, 19, 55, 0.596078) 0px 0px 7.9595799446106px 0px;
 }
 
-.header-con.well {
+.form-control.ng-valid {
+    border-color: rgb(42, 212, 19);
+    box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset, rgba(42, 212, 19, 0.596078) 0px 0px 7.9595799446106px 0px;
+}
+small {margin: 2% auto 2% auto; width: 50%; color: rgb(237, 19, 55); }
+
+.header-footer.well {
     text-align: center;
     width: 100%;
-}
-
-.header span {
-    font-size: 35px;
+    font-size: 30px;
+    color: #F1FAD1;
     font-style: oblique;
     vertical-align: middle;
+    background-color: #474747;
+    border-radius: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+footer {
+    position : absolute;
+    height: 5%;
+    bottom: 0;
+    margin-top: 5%;
 }
 
 .con.well {
+    position: fixed;
+    width: 90%;
+    height: 100%;
+    margin: 0 5% 0 5%;
+    bottom: 0;
     border-right: 10px solid rgba(0,0,0,0.4);
     border-left: 10px solid rgba(0,0,0,0.4);
-    padding: 0 0 0 0;
-    /*border-right: solid 10px rgba(160,160,160,0.5) ; */
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
     background-color: rgba(0,128,255,0.9) ;
 }
 
@@ -41,13 +68,6 @@ table {
     margin: 4% auto 4% auto;
 }
 
-.ng-scope .con {
-    position: fixed;
-    width: 90%;
-    height: 100%;
-    margin: 0 5% 0 5%;
-    bottom: 0;
-}
 tr {
     width: 90%;
     margin-left: auto;
@@ -112,18 +132,18 @@ body {
     background-color: rgba(224,224,224, 0.7);
     margin: auto auto auto auto;
 
-    -webkit-animation-name: opas;
+    -webkit-animation-name: rotateContainer;
     -webkit-animation-duration: 6000ms;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
 }
-@-webkit-keyframes opas{
+/* Rotates clockwise. */
+@-webkit-keyframes rotateContainer{
     from { -webkit-transform: rotate(0deg); }
     to { -webkit-transform: rotate(360deg); }
 }
-
-
-@-webkit-keyframes op{
+/* Rotates counterclockwise. */
+@-webkit-keyframes rotateItem{
     from { -webkit-transform: rotate(360deg); }
     to { -webkit-transform: rotate(0deg); }
 }
@@ -135,7 +155,7 @@ body {
     margin: -2em;
 }
 .circle-container img { display: block; width: 100%;
-    -webkit-animation-name: op;
+    -webkit-animation-name: rotateItem;
     -webkit-animation-duration: 6000ms;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;

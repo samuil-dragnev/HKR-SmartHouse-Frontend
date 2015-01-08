@@ -1,27 +1,60 @@
 <div class="con well">
-    <div class="header-con well">
-        <header class="header" role="banner" aria-expanded="true">
-            <img src="img/logo.png" width="72" height="72">
-            <span>marter House Project HKR 2014/2015</span>
-        </header>
-    </div>
+    <header class="header-footer well" role="banner" aria-expanded="true">
+        <img src="img/logo.png" width="72" height="72">
+        <span>marter House Project HKR 2014/2015</span>
+    </header>
     <table>
         <tbody>
             <tr>
                 <td>
                     <div id="logincontainer" class="container well">
-                        <form class="form-signin" role="form" ng-submit="submit()">
+                        <form class="form-signin" name="login_form" role="form" novalidate
+                              ng-submit="authenticate(login.email,login.password)">
                             <h2 class="form-signin-heading">Please sign in</h2>
-                            <input type="text" class="form-control" placeholder="Username" required autofocus>
-                            <input type="password" class="form-control" placeholder="Password" required>
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="Email"
+                                   name="ssn"
+                                   ng-model="login.email"
+                                   ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/"
+                                   required />
+
+                            <div class="error"
+                                 ng-show="login_form.ssn.$dirty && login_form.ssn.$invalid ">
+                                <small class="error" ng-show="login_form.ssn.$error.required">
+                                    Email is required!
+                                </small>
+                                <small class="error" ng-show="login_form.ssn.$error.email">
+                                    Invalid email address.
+                                </small>
+                            </div>
+                            <input type="password"
+                                   class="form-control"
+                                   placeholder="Password"
+                                   name="password"
+                                   ng-model="login.password"
+                                   ng-minlength=6
+                                   required>
+                            <div class="error"
+                                 ng-show="login_form.password.$dirty && login_form.password.$invalid ">
+                                <small class="error" ng-show="login_form.password.$error.required">
+                                    Password is required!
+                                </small>
+                                <small class="error" ng-show="login_form.password.$error.minlength">
+                                    Password cannot be less than 6 characters!
+                                </small>
+                            </div>
+
                             <label class="checkbox">
                                 <input type="checkbox" value="remember-me"> Remember me
                             </label>
-                            <button id="loginbutton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                            <button class="btn btn-lg btn-primary btn-block"
+                                    type="submit"
+                                    ng-disabled ="login_form.$invalid">Sign in</button>
                         </form>
                     </div>
-                    <div id="housesel" class="houseselector well" ng-controller="HouseController">
-                        <form class="form-selecthouse" role="form" ng-submit="selecthouse()">
+                    <div id="housesel" class="houseselector well">
+                        <form class="form-selecthouse" role="form" ng-submit="submit()">
                             <h2 class="form-signin-heading">Please Select House</h2>
                             <ul>
                                 <select size="6" name="selectionField" multiple="yes">
@@ -57,7 +90,8 @@
             </tr>
         </tbody>
     </table>
+    <footer class="header-footer well">
 
-
+    </footer>
 </div>
-<script src="js/login.js"></script>
+<script src="js/lib/login.js"></script>
