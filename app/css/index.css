@@ -11,14 +11,25 @@ body {
 
 #leftBar {
     line-height: 30px;
-    width: 25%;
+    width: 100%;
     float: left;
 }
 
-#content {
+#selector {
+    width: 25%;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+}
+
+#devices {
     width: 75%;
-    float: left;
-    padding-top: 0.5%;
+    padding: 2.5% 2.5% 2.5% 2.5%;
+    right: 0;
+}
+#content {
+    width: 95%;
+    
 }
 
 .thumbnail {
@@ -31,6 +42,11 @@ h3 {
 }
 
 #logOutBtn {
+    float: right;
+    margin: 10px 10px 10px 10px;
+}
+
+#adminbutton {
     float: right;
     margin: 10px 10px 10px 10px;
 }
