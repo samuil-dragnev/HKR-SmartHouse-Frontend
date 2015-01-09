@@ -7,25 +7,33 @@
         <tbody>
             <tr>
                 <td>
-                    <div id="login-container" class="container well">
+                    <div id="login-container" class="container well" ng-show="isRegistered" ng-hide="isAuth">
                         <form class="form-signin" name="login_form" role="form" novalidate
-                              ng-submit="submit()">
+                              ng-submit="">
                             <h2 class="form-signin-heading">Please sign in</h2>
-                            <input type="email"
+                            <input type="text"
                                    class="form-control"
-                                   placeholder="Email"
+                                   placeholder="SSN"
                                    name="ssn"
-                                   ng-model="login.email"
-                                   ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/"
+                                   ng-minlength=10
+                                   ng-maxlength=10
+                                   ng-pattern="^[0-9]+$" 
+                                   ng-model="login.ssn"
                                    required />
 
                             <div class="error"
                                  ng-show="login_form.ssn.$dirty && login_form.ssn.$invalid ">
                                 <small class="error" ng-show="login_form.ssn.$error.required">
-                                    Email is required!
+                                    SSN is required!
                                 </small>
-                                <small class="error" ng-show="login_form.ssn.$error.email">
-                                    Invalid email address.
+                                <small class="error" ng-show="login_form.ssn.$error.pattern">
+                                    SSN contains invalid characters.
+                                </small>
+                                <small class="error" ng-show="login_form.ssn.$error.minlength">
+                                    SSN can´t be less than 10 characters.
+                                </small>
+                                <small class="error" ng-show="login_form.ssn.$error.maxlength">
+                                    SSN can´t be more than 10 characters.
                                 </small>
                             </div>
                             <input type="password"
@@ -49,11 +57,154 @@
                                 <input type="checkbox" value="remember-me"> Remember me
                             </label>
                             <button class="btn btn-lg btn-primary btn-block"
-                                    type="submit"
+                                    type="submit" ng-click="authenticate(); console.log('test')"
                                     ng-disabled ="login_form.$invalid">Sign in</button>
+                            <a href="" ng-click="showRegister(false)">No Account?</a>
                         </form>
                     </div>
-                    <div id="housesel" class="houseselector well">
+                    <div id="createaccountpanel" ng-hide="isRegistered" class="container well">
+                        <form class="form-signin" name="registration_form" role="form" novalidate
+                              ng-submit="submit()">
+                            <h2 class="form-signin-heading">Create Account</h2>
+                            <input type="text" name="ssn" class="form-control" placeholder="SSN"  ng-minlength=10
+                                   ng-maxlength=10
+                                   ng-pattern="/^[0-9]+$/" 
+                                   ng-model="login.ssn"
+                                   required />
+                            <div class="error" ng-show="registration_form.ssn.$dirty && registration_form.ssn.$invalid "> 
+                                <small class="error" ng-show="registration_form.ssn.$error.required">
+                                    SSN is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.ssn.$error.minlenght">
+                                    SSN can´t be less than 10 characters.
+                                </small>
+                                <small class="error" ng-show="registration_form.ssn.$error.maxlength">
+                                    SSN can´t be more than 10 characters.
+                                </small>
+                                <small class="error" ng-show="registration_form.ssn.$error.pattern">
+                                    SSN  should consist of numbers.
+                                </small>
+                            </div>
+                            <input type="text" name="firstname" class="form-control" placeholder="First Name" 
+                                   ng-minlength=2
+                                   ng-model="login.firstname"
+                                   required />
+                            <div class="error" ng-show="registration_form.firstname.$dirty && registration_form.firstname.$invalid "> 
+                                <small class="error" ng-show="registration_form.firstname.$error.required">
+                                    First Name is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.firstname.$error.minlength">
+                                    First Name can´t be less than 2 characters.
+                                </small>
+                            </div>
+                            <input type="text" name="lastname" class="form-control" placeholder="Last Name" ng-model="login.lastname" ng-minlength=2
+                                   required/>
+                            <div class="error" ng-show="registration_form.lastname.$dirty && registration_form.lastname.$invalid "> 
+                                <small class="error" ng-show="registration_form.lastname.$error.required">
+                                    Last Name is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.lastname.$error.minlength">
+                                    Last Name can´t be less than 2 characters.
+                                </small>
+                            </div>
+                            <input type="text" name="city" class="form-control" ng-model="login.city" placeholder="City" ng-minlength=2
+                                   required />
+                            <div class="error" ng-show="registration_form.city.$dirty && registration_form.city.$invalid "> 
+                                <small class="error" ng-show="registration_form.city.$error.required">
+                                    City is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.city.$error.minlength">
+                                    City can´t be less than 2 characters.
+                                </small>
+                            </div>
+                            <input type="text" name="postcode" class="form-control" ng-model="login.postcode" placeholder="Post Code"  
+                                   ng-minlength=5
+                                   ng-pattern="/^[0-9]+$/" 
+                                   ng-maxlength=5
+                                   required />
+                            <div class="error" ng-show="registration_form.postcode.$dirty && registration_form.postcode.$invalid "> 
+                                <small class="error" ng-show="registration_form.postcode.$error.required">
+                                    Post Code is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.postcode.$error.minlength">
+                                    Post Code can´t be less than 5 characters.
+                                </small>
+                                <small class="error" ng-show="registration_form.postcode.$error.maxlength">
+                                    Post Code can´t be more than 5 characters.
+                                </small>
+                                <small class="error" ng-show="registration_form.postcode.$error.pattern">
+                                    Post Code  should consist of numbers.
+                                </small>
+                            </div>
+                            <input type="text" name="street" class="form-control" placeholder="Street Name" ng-model="login.street" ng-minlength=2
+                                   required />
+                            <div class="error" ng-show="registration_form.street.$dirty && registration_form.street.$invalid "> 
+                                <small class="error" ng-show="registration_form.street.$error.required">
+                                    Street Name is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.street.$error.minlength">
+                                    Street Name can´t be less than 2 characters.
+                                </small>
+                            </div>
+                            <input type="text" name="streetnr" class="form-control" ng-model="login.streetnr" placeholder="Street Number" required/>
+                            <div class="error" ng-show="registration_form.streetnr.$dirty && registration_form.streetnr.$invalid "> 
+                                <small class="error" ng-show="registration_form.streetnr.$error.required">
+                                    Street Number is required!
+                                </small>
+                            </div>
+                            <input type="text" name="country" class="form-control" placeholder="Country" ng-model="login.country" ng-minlength=2
+                                   required />
+                            <div class="error" ng-show="registration_form.country.$dirty && registration_form.country.$invalid "> 
+                                <small class="error" ng-show="registration_form.country.$error.required">
+                                    Country Name is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.country.$error.minlength">
+                                    Country Name can´t be less than 2 characters.
+                                </small>
+                            </div>
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="Email"
+                                   name="email"
+                                   ng-model="login.email"
+                                   ng-pattern="/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/"
+                                   required />
+
+                            <div class="error"
+                                 ng-show="registration_form.ssn.$dirty && login_form.ssn.$invalid ">
+                                <small class="error" ng-show="registration_form.ssn.$error.required">
+                                    Email is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.ssn.$error.email">
+                                    Invalid email address.
+                                </small>
+                            </div>
+                            <input type="password"
+                                   class="form-control"
+                                   placeholder="Password"
+                                   name="password"
+                                   ng-model="login.password"
+                                   ng-minlength=6
+                                   required>
+                            <div class="error"
+                                 ng-show="registration_form.password.$dirty && registration_form.password.$invalid ">
+                                <small class="error" ng-show="registration_form.password.$error.required">
+                                    Password is required!
+                                </small>
+                                <small class="error" ng-show="registration_form.password.$error.minlength">
+                                    Password cannot be less than 6 characters!
+                                </small>
+                            </div>
+                            <label class="checkbox">
+                                <input type="checkbox" value="remember-me"> Accept Terms 
+                            </label>
+                            <button class="btn btn-lg btn-primary btn-block"
+                                    type="submit"
+                                    ng-disabled ="registration_form.$invalid">Create</button>
+                        </form>
+                        <button class="btn btn-lg btn-primary btn-block" ng-click="showRegister(true)">Cancel</button>
+                    </div>
+                    <div id="housesel" class="houseselector well" ng-show="isAuth">
                         <form class="form-selecthouse" role="form" ng-submit="submit()">
                             <h2 class="form-signin-heading">Please Select House</h2>
                             <ul>
@@ -75,14 +226,30 @@
                     <div class="imgcontainer">
                         <div class="circle-container">
                             <div title="Projet logo" class='center'><img src='img/logo.png'></div>
-                            <div class='deg0'><img src='img/Alarms.png'></div>
-                            <div class='deg45'><img src='img/Environment.png'></div>
-                            <div class='deg90'><img src='img/Sun.png'></div>
-                            <div class='deg135'><img src='img/Laptop.png'></div>
-                            <div class='deg180'><img src='img/Music.png'></div>
-                            <div class='deg225'><img src='img/Power.png'></div>
-                            <div class='deg270'><img src='img/Something.png'></div>
-                            <div class='deg315'><img src='img/WaterLeckage.png'></div>
+                            <div class="imgholder" id='deg0'><img class ="icons" src='img/Alarms.png'>
+                                <div class="well iconinfo" style="display: none; width:100px; height:auto" >Manage Your Alarms</div>
+                            </div>
+                            <div class="imgholder" id='deg45'><img class ="icons" src='img/Environment.png'>
+                                <div class="well iconinfo" style="display: none; width:100px"  >ajflkasdl</div>
+                            </div>
+                            <div class="imgholder" id='deg90'><img class ="icons" src='img/Sun.png'>
+                                <div class="well iconinfo" style="display: none; width:100px" >ajflkasdl</div>
+                            </div>
+                            <div class="imgholder" id='deg135'><img class ="icons" src='img/Laptop.png'>
+                                <div class="well iconinfo" style="display: none; width:100px" >ajflkasdl</div>
+                            </div>
+                            <div class="imgholder" id='deg180'><img class ="icons" src='img/Music.png'>
+                                <div class="well iconinfo" style="display: none; width:100px" >ajflkasdl</div>
+                            </div>
+                            <div class="imgholder" id='deg225'><img class ="icons" src='img/Power.png'>
+                                <div class="well iconinfo" style="display: none; width:100px" >ajflkasdl</div>
+                            </div>
+                            <div class="imgholder" id='deg270'><img class ="icons" src='img/Something.png'>
+                                <div class="well iconinfo" style="display: none; width:100px" >ajflkasdl</div>
+                            </div>
+                            <div class="imgholder" id='deg315'><img class ="icons" src='img/WaterLeckage.png'>
+                                <div class="well iconinfo" style="display: none; width:100px" >ajflkasdl</div>
+                            </div>
                         </div>
 
                     </div>
@@ -95,4 +262,30 @@
             <a href="http://www.hkr.se/en/education/course-page/?cCode=DA540C">Software Engineering 2 at HKR</a></span>
     </footer>
 </div>
-<script src="js/lib/login.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".circle-container").hover(
+            function(){
+                $(this).css("-webkit-animation-play-state", "paused");
+                $(".icons").css("-webkit-animation-play-state", "paused");
+                //$(this).children(".icons").css("-webkit-animation-duration", "10000ms");
+            },
+            function(){
+                $(this).css("-webkit-animation-play-state", "running");
+                $(".icons").css("-webkit-animation-play-state", "running");
+                //$(this).children(".icons").css("-webkit-animation-duration", "6000ms");
+            });
+        $(".icons").hover(
+            function(){
+                $(this).css("-webkit-animation-play-state", "paused");
+                $(this).siblings(".iconinfo").show();
+                //$(this).parent(".circle-container").css("-webkit-animation-play-state", "paused");
+            },
+            function(){
+                $(this).css("-webkit-animation-play-state", "running");
+                $(this).siblings(".iconinfo").hide();
+                //$(this).parent(".circle-container").css("-webkit-animation-play-state", "running");
+            });
+
+    });
+</script>
