@@ -1,4 +1,4 @@
-.container{
+.container, .houseselector {
     float: left;
     width: 80%;
     margin-left: 10%;
@@ -92,22 +92,8 @@ tr {
     margin-right: auto;
     width: 100%;
 }
-.houseselector {
-    display: none;
-    float: left;
-    height: 100%;
-    width: 80%;
-    margin-left: 10%;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    border: solid 1px #555;
-    background-color: #eed;
-    box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
-    -moz-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
-    -webkit-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
-    -o-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
-}
+
+
 
 .circle-container {
     width: 24em;
@@ -141,11 +127,7 @@ tr {
     margin: -2em;
 }
 .circle-container img { display: block; width: 100%;
-    -webkit-animation-name: rotateItem;
-    -webkit-animation-duration: 6000ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-
+   
 }
 .circle-container div img {
     border: solid 1px #555;
@@ -155,14 +137,17 @@ tr {
     -o-box-shadow: 7px -7px rgba(0,0,0,0.6);
     border-radius:100px;
 }
-.deg0 { transform: translate(12em); } /* 12em = half the width of the wrapper */
-.deg90 {  transform: rotate(90deg) translate(12em) rotate(-90deg); } /* 12em = half the width of the wrapper */
-.deg270 {  transform: rotate(270deg) translate(12em) rotate(-270deg); } /* 12em = half the width of the wrapper */
-.deg45 { transform: rotate(45deg) translate(12em) rotate(-45deg); }
-.deg135 { transform: rotate(135deg) translate(12em) rotate(-135deg); }
-.deg180 { transform: translate(-12em); }
-.deg225 { transform: rotate(225deg) translate(12em) rotate(-225deg); }
-.deg315 { transform: rotate(315deg) translate(12em) rotate(-315deg); }
+.imgholder {
+    
+}
+#deg0 { transform: translate(12em); } /* 12em = half the width of the wrapper */
+#deg90 {  transform: rotate(90deg) translate(12em) rotate(-90deg); } /* 12em = half the width of the wrapper */
+#deg270 {  transform: rotate(270deg) translate(12em) rotate(-270deg); } /* 12em = half the width of the wrapper */
+#deg45 { transform: rotate(45deg) translate(12em) rotate(-45deg); }
+#deg135 { transform: rotate(135deg) translate(12em) rotate(-135deg); }
+#deg180 { transform: translate(-12em); }
+#deg225 { transform: rotate(225deg) translate(12em) rotate(-225deg); }
+#deg315 { transform: rotate(315deg) translate(12em) rotate(-315deg); }
 .form-control{
     margin-top: 3%;
 }

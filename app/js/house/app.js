@@ -51,44 +51,26 @@
                 roomsArray.push(rooms[i]);
             }
             return roomsArray;
-//            var arr = [];
-//            var arr1 = [];
-//            for( var i in rooms ) {
-//                if (rooms.hasOwnProperty(i)){
-//                    arr.push(rooms[i]);
-//                    
-//                    //console.log(arr[i]);
-//                }
-//                
-//            }
-//            for( var j in arr ) {
-//                if (arr[j].hasOwnProperty(j)){
-//                    arr1.push(arr[j].devices);
-//
-//                    console.log(arr1[j].name);
-//                }
-//
-//            }
-//            
-//            return rooms;
-//            var allDevices = [];
-//            var rooms = $scope.house[3].rooms;
-//            for(var j = 0; j < rooms.length; j ++) {
-//                for(var i = 0; i < rooms.devices.length; i ++){
-//                    allDevices[i] = rooms.devices[i];
-//                    
-//                    console.log(room.devices[i]);
-//                    
-//                }
-//            }
-//            return allDevices;
         };
     }]);
 
     app.controller('LoginController', ['$scope', '$location', '$timeout', function ($scope, $location, $timeout) {
+        $scope.isRegistered = true;
+        $scope.isAuth = false;
+        $scope.showHouseSelector = function() {
+            $scope.isAuth = true;
+            console.log("testing");
+        }
+        $scope.showRegister = function(condition) {
+            $scope.isRegistered = condition;
+        }
+        $scope.authenticate = function () {
+            //$timeout(function () { $location.path("/house"); }, 3000);
+            $scope.showHouseSelector();
+        };
         $scope.submit = function () {
-           angular.element(".circle-container").css("-webkit-animation-duration", "1000ms");
             $timeout(function () { $location.path("/house"); }, 3000);
+            
         };
     }]);
 })();
