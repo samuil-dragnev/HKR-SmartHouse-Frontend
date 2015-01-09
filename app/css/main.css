@@ -1,0 +1,111 @@
+#view {
+    position: fixed;
+    bottom: 50px;
+    top: 50px;
+    width: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+}
+#tabs {
+    margin-top: 5%;
+    padding-right: 35%;
+}
+.auth.well {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#leftBar.well {
+    line-height: 30px;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    border: none;
+    -moz-box-shadow: inset 0 0 15px #000000;
+    -webkit-box-shadow: inset 0 0 15px #000000;
+    box-shadow: inset 0 0 15px #000000;
+}
+
+#selector {
+    width: 25%;
+    padding: 0;
+    bottom: 50px;
+    top: 50px;
+    position: fixed;
+}
+
+#blur {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 50px;
+    top: 50px;
+    width: 100%;
+}
+
+#devices {
+    width: 75%;
+    bottom: 50px;
+    top: 50px;
+    padding: 1%;
+}
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.thumbnail {
+    background-color: rgba(0, 128, 255,0.9);
+    border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+h3 {
+    color: #ffffff;
+}
+
+#logOutBtn {
+    float: right;
+    margin: 10px 10px 10px 10px;
+}
+
+#admin-button {
+    float: right;
+    margin: 10px 10px 10px 10px;
+}
+
+#address, #info, #logo {
+    float: left;
+    height: 30px;
+    margin: 10px 10px 10px 10px;
+}
+
+#topBar, #bottomBar {
+    background-color: #428bca;
+    border-color: #357ebd;
+    color: #fff;
+    margin: 0 0 0 0;
+}
+
+.container {
+    width: 98%;
+    margin: 0 auto 0 auto;
+}
+
+.caption > h3 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+.caption > div > div {
+    margin-left: 25%;
+    margin-right: 25%;
+
+}
+
+.images > div {
+    margin-left: 40%;
+    margin-right: 40%;
+}

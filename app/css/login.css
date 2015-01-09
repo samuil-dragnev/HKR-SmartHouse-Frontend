@@ -4,18 +4,14 @@
     margin-left: 10%;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
-    border-radius: 30px;
+    border-radius: 5px;
     border: solid 1px #555;
     background-color: #eed;
-    box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
-    -moz-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
-    -webkit-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
-    -o-box-shadow: 10px -10px 5px rgba(0,0,0,0.6);
+    box-shadow: 10px -10px 5px rgba(0,0,0,0.6), inset 0 0 15px #000000;
+    -moz-box-shadow: 10px -10px 5px rgba(0,0,0,0.6), inset 0 0 15px #000000;
+    -webkit-box-shadow: 10px -10px 5px rgba(0,0,0,0.6), inset 0 0 15px #000000;
+    -o-box-shadow: 10px -10px 5px rgba(0,0,0,0.6), inset 0 0 15px #000000;
 }
-html{
-     height: 100%;
-     text-align: center;
- }
 
 .form-control.ng-invalid {
     border-color: rgb(237, 19, 55);
@@ -40,6 +36,7 @@ small {margin: 2% auto 2% auto; width: 50%; color: rgb(237, 19, 55); }
     margin-bottom: 0;
     border: none;
 }
+
 
 footer {
     position : absolute;
@@ -72,17 +69,6 @@ tr {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-}
-.checkbox{
-    margin-left: auto;
-    margin-right: auto;
-    width: 35%;
-}
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0 0 0 0;
-    background: #ffffff url("../img/background.jpg") no-repeat right top;
 }
 
 .imgcontainer{

@@ -11,7 +11,7 @@
                     }).when('/house/', {
                         controller: 'HouseController',
                         templateUrl: 'main.html',
-                        css: 'css/index.css'
+                        css: 'css/main.css'
                     }).otherwise({redirectTo: '/'});
                 $locationProvider.html5Mode(true);
             }
@@ -87,7 +87,7 @@
 
     app.controller('LoginController', ['$scope', '$location', '$timeout', function ($scope, $location, $timeout) {
         $scope.submit = function () {
-            $(".circle-container").css("-webkit-animation-duration", "1000ms");
+           angular.element(".circle-container").css("-webkit-animation-duration", "1000ms");
             $timeout(function () { $location.path("/house"); }, 3000);
         };
     }]);

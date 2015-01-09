@@ -1,16 +1,19 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topBar">
     <div class="container">
+        <a id="logo" href="index.html"><img src="img/logo.png" width="30" height="30"></a>
         <span id="address">{{house[0].address}}</span>
         <button class="btn btn-sm btn-warning" name="logout" title="logout" id="logOutBtn">
             <span class="glyphicon glyphicon-off"></span> Log Out
         </button>
-        <button class="btn btn-sm btn-warning" name="Admin Page" ng-click="showAdmin()" title="adminpage" id="adminbutton">
+        <button class="btn btn-sm btn-warning" name="Admin Page" ng-click="showAdmin()" title="adminpage"
+                id="admin-button">
             <span class="glyphicon glyphicon-on"></span> Admin
         </button>
     </div>
 </nav>
-<table id="main"> 
-    <tbody>
+<div id="blur">
+    <table id="main">
+        <tbody>
         <tr>
             <td id="selector">
                 <div id="leftBar" class="well">
@@ -55,7 +58,7 @@
                 </div>
             </td>
             <td id="devices">
-                <section id="content" ng-hide="isSwitched">
+                <section class="content" ng-hide="isSwitched">
                     <div ng-repeat="device in room.devices">
                         <div class="row-horizontal">
                             <div class="col-sm-6 col-md-4">
@@ -87,66 +90,71 @@
                         </div>
                     </div>
                 </section>
-                <div ng-show="isSwitched">
-                    <div id="adminpanel"> 
-                        <div><h3>Authorize User</h3></div>
-                        <div><h3>Add Room</h3></div>
-                        <div><h3>Add Device to Room</h3></div>
-                    </div>
-                    <div id="adminoptions">
-                        <div id="authorizeuser">
-                            <table>
+                <div class="content" ng-show="isSwitched">
+                    <div class="admin-panel">
+                        <h3>Authorize User</h3>
+                        <div id="authorize-user">
+                            <table class="auth well">
                                 <thead>
-                                    <tr>
-                                        <th>
-                                            <span class="title"></span>
-                                        </th>
-                                        <th>
-                                            <span class="title"></span>
-                                        </th>
-                                    </tr>
+                                <tr>
+                                    <th>
+                                        <span class="title">User Information</span>
+                                    </th>
+                                    <th>
+                                        <span class="title">Devices Allowed</span>
+                                    </th>
+                                </tr>
                                 </thead>
-                                <tbody class="well">
-                                    <tr>
-                                        <td>
-                                            <ul>
-                                                <li><span class="infotitle">First name:</span></li>
-                                                <li><span class="infotitle">Last name:</span></li>
-                                                <li><span class="infotitle">Email:</span></li>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <form >
-                                                <ul ng-repeat="item in getAllRooms()">
-                                                    <span>{{item.name}}</span> 
-                                                    <ul ng-repeat="device in item.devices">
-                                                        <li>{{device.name}}<input type="checkbox"> </li>
-                                                    </ul>
-                                                </ul>
-                                                <input type="submit" value="Accept user" />
-                                                <input type="submit" value="Deny user access" />
-                                            </form>
-                                        </td>
-                                    </tr>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li><span class="info-title">First name:</span></li>
+                                            <li><span class="info-title">Last name:</span></li>
+                                            <li><span class="info-title">Email:</span></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <form>
+                                            <div class=".admin-panel" ng-repeat="item in items">
+                                                <span>{{item.name}}</span>
+                                                <div ng-repeat="device in item.devices">
+                                                    <span>{{device.name}}</span><input type="checkbox">
+                                                </div>
+                                            </div>
+                                            <input type="submit" value="Accept user"/>
+                                            <input type="submit" value="Deny user access"/>
+                                        </form>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div id="addingroom">
-                            
+                        <h3>Add Room</h3>
+
+                        <div id="adding-room">
+
                         </div>
-                        <div id="addingdevice">
-                        
+                        <h3>Add Device to Room</h3>
+
+                        <div id="adding-device">
+
                         </div>
                     </div>
-                    
-                    
                 </div>
             </td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+
+</div>
 <nav class="navbar navbar-default navbar-fixed-bottom" id="bottomBar" role="navigation">
     <div class="container">
         <span id="info">Some stuff</span>
     </div>
 </nav>
+<script>
+    $(document).ready(function () {
+        $(".admin-panel").accordion({heightStyle: "fill"});
+    });
+</script>

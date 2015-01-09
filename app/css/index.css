@@ -1,81 +1,11 @@
+html{
+    height: 100%;
+    text-align: center;
+}
+
 body {
+    height: 100%;
     padding-bottom: 50px;
     padding-top: 50px;
     background: #ffffff url("../img/background.jpg") no-repeat right top;
-}
-
-#tabs {
-    margin-top: 5%;
-    padding-right: 35%;
-}
-
-#leftBar {
-    line-height: 30px;
-    width: 100%;
-    float: left;
-}
-
-#selector {
-    width: 25%;
-    top: 0;
-    bottom: 0;
-    padding: 0;
-}
-
-#devices {
-    width: 75%;
-    padding: 2.5% 2.5% 2.5% 2.5%;
-    right: 0;
-}
-#content {
-    width: 95%;
-    
-}
-
-.thumbnail {
-    background-color: rgba(0, 128, 255,0.9);
-    border: 2px solid rgba(0, 0, 0, 0.4);
-}
-
-h3 {
-    color: #ffffff;
-}
-
-#logOutBtn {
-    float: right;
-    margin: 10px 10px 10px 10px;
-}
-
-#adminbutton {
-    float: right;
-    margin: 10px 10px 10px 10px;
-}
-
-#address, #info {
-    float: left;
-    margin: 10px 10px 10px 10px;
-}
-
-#topBar, #bottomBar {
-    background-color: #428bca;
-    border-color: #357ebd;
-    color: #fff;
-    margin: 0 0 0 0;
-}
-
-.caption > h3 {
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-}
-
-.caption > div > div {
-    margin-left: 25%;
-    margin-right: 25%;
-
-}
-
-.images > div {
-    margin-left: 40%;
-    margin-right: 40%;
 }
