@@ -116,7 +116,7 @@
                                     </td>
                                     <td>
                                         <form>
-                                            <div class=".admin-panel" ng-repeat="item in items">
+                                            <div class=".admin-panel" ng-repeat="item in getAllRooms()">
                                                 <span>{{item.name}}</span>
                                                 <div ng-repeat="device in item.devices">
                                                     <span>{{device.name}}</span><input type="checkbox">
@@ -131,14 +131,34 @@
                             </table>
                         </div>
                         <h3>Add Room</h3>
-
                         <div id="adding-room">
-
+                            <form name="add-room-form" role="form" novalidate ng-submit="">
+                                <label for="room-name">Room Name</label>
+                                <input class="form-control" id="room-name" type="text" name="room-name" />
+                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="button">Add</button>
+                            </form>
                         </div>
                         <h3>Add Device to Room</h3>
 
                         <div id="adding-device">
-
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <ul ng-repeat="item in getAllRooms()">
+                                                <li><button class="btn btn-lg btn-primary btn-block" type="button" name="item.selected">{{item.name}}</button></li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <form>
+                                                <label for="device-name">Device Name:</label>
+                                                <input type="text" class="form-control" name="device-name" id="device-name" />
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="button">Add</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

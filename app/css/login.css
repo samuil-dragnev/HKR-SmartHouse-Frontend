@@ -1,3 +1,6 @@
+body {
+    padding: 0;
+}
 .container{
     float: left;
     width: 80%;
@@ -24,7 +27,7 @@
 }
 small {margin: 2% auto 2% auto; width: 50%; color: rgb(237, 19, 55); }
 
-.header-footer.well {
+.head.well {
     text-align: center;
     width: 100%;
     font-size: 30px;
@@ -32,6 +35,20 @@ small {margin: 2% auto 2% auto; width: 50%; color: rgb(237, 19, 55); }
     font-style: oblique;
     vertical-align: middle;
     background-color: #474747;
+    border-radius: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.foot.well {
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    color: #F1FAD1;
+    font-style: oblique;
+    vertical-align: middle;
+    background-color: #474747;
+    padding: 0;
     border-radius: 0;
     margin-bottom: 0;
     border: none;
@@ -92,6 +109,7 @@ tr {
     margin-right: auto;
     width: 100%;
 }
+
 .houseselector {
     display: none;
     float: left;
