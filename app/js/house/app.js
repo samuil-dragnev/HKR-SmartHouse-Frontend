@@ -56,10 +56,17 @@
 
     app.controller('LoginController', ['$scope', '$location', '$timeout', function ($scope, $location, $timeout) {
         $scope.isRegistered = true;
+        $scope.isAddingPersonalInfo = true;
+        $scope.backToLogin = false;
         $scope.isAuth = false;
         $scope.showHouseSelector = function() {
             $scope.isAuth = true;
-            console.log("testing");
+        }
+        $scope.showInfoAdding = function(condition) {
+            $scope.isAddingPersonalInfo = condition;
+        }
+        $scope.goBackToLogin = function() {
+            $scope.backToLogin = true;
         }
         $scope.showRegister = function(condition) {
             $scope.isRegistered = condition;
