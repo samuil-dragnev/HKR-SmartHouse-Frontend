@@ -1,0 +1,30 @@
+<table class="auth well">
+    <thead>
+    <tr>
+        <th class="table-user">User Information</th>
+        <th class="table-device">Devices Allowed</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="table-user">
+            <div>
+                <span class="info-title">First name:</span>
+            </div>
+            <div>
+                <span class="info-title">Last name:</span>
+            </div>
+            <div>
+                <span class="info-title">Email:</span>
+            </div>
+        </td>
+        <td class="table-device">
+            <form>
+                <authorize-room-devices data="house[3].rooms"></authorize-room-devices>
+                <input type="submit" value="Accept user"/>
+                <input type="submit" value="Deny user access"/>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>

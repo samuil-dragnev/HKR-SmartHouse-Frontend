@@ -91,76 +91,7 @@
                     </div>
                 </section>
                 <div class="content" ng-show="isSwitched">
-                    <div class="admin-panel">
-                        <h3>Authorize User</h3>
-                        <div id="authorize-user">
-                            <table class="auth well">
-                                <thead>
-                                <tr>
-                                    <th>
-                                        <span class="title">User Information</span>
-                                    </th>
-                                    <th>
-                                        <span class="title">Devices Allowed</span>
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <ul>
-                                            <li><span class="info-title">First name:</span></li>
-                                            <li><span class="info-title">Last name:</span></li>
-                                            <li><span class="info-title">Email:</span></li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <form>
-                                            <div class=".admin-panel" ng-repeat="item in getAllRooms()">
-                                                <span>{{item.name}}</span>
-                                                <div ng-repeat="device in item.devices">
-                                                    <span>{{device.name}}</span><input type="checkbox">
-                                                </div>
-                                            </div>
-                                            <input type="submit" value="Accept user"/>
-                                            <input type="submit" value="Deny user access"/>
-                                        </form>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <h3>Add Room</h3>
-                        <div id="adding-room">
-                            <form name="add-room-form" role="form" novalidate ng-submit="">
-                                <label for="room-name">Room Name</label>
-                                <input class="form-control" id="room-name" type="text" name="room-name" />
-                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="button">Add</button>
-                            </form>
-                        </div>
-                        <h3>Add Device to Room</h3>
-
-                        <div id="adding-device">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <ul ng-repeat="item in getAllRooms()">
-                                                <li><button class="btn btn-lg btn-primary btn-block" type="button" name="item.selected">{{item.name}}</button></li>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <form>
-                                                <label for="device-name">Device Name:</label>
-                                                <input type="text" class="form-control" name="device-name" id="device-name" />
-                                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="button">Add</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <admin-panel></admin-panel>
                 </div>
             </td>
         </tr>
@@ -173,8 +104,3 @@
         <span id="info">Some stuff</span>
     </div>
 </nav>
-<script>
-    $(document).ready(function () {
-        $(".admin-panel").accordion({heightStyle: "fill"});
-    });
-</script>

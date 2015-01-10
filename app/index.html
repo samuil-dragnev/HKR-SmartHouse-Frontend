@@ -4,21 +4,26 @@
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-switch.min.css" >
         <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="bower_components/jquery-ui-1.11.2.custom/jquery-ui.css">
+        <link rel="stylesheet" href="bower_components/jquery-ui/themes/start/jquery-ui.css">
         <link rel="icon" type="image/png" href="img/icon.png">
 
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/jquery-ui-1.11.2.custom/jquery-ui.min.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
         <script src="bower_components/angular-route-styles/route-styles.js"></script>
         <script src="js/lib/bootstrap-switch.min.js"></script>
+
         <script src="js/house/app.js"></script>
+        <script src="js/house/directives.js"></script>
+        <script src="js/house/factories.js"></script>
         <script src="js/lib/index.js"></script>
         <base href="/HKR-SmartHouse-Web-Shell/app/">
     </head>
     <body>
-        <div id="view" ng-view></div>
+        <div class="view-container">
+            <div ng-view class="view-frame" id="view"></div>
+        </div>
     </body>
 </html>
