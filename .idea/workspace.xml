@@ -2,78 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="146b9e61-4fe0-42a7-848f-278d986fd587" name="Default" comment="Modification on the routing.">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\external\jquery\jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_flat_55_999999_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_flat_75_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_glass_45_0078ae_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_glass_55_f8da4e_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_glass_75_79c9ec_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_gloss-wave_75_2191c0_500x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-icons_0078ae_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-icons_056b93_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-icons_d8e7f3_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-icons_e0fdff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-icons_f5e175_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-icons_f7a50d_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\images\ui-icons_fcd113_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\jquery-ui.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\jquery-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\jquery-ui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\jquery-ui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\jquery-ui.structure.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\jquery-ui.structure.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\jquery-ui.theme.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\bower_components\jquery-ui-1.11.2.custom\jquery-ui.theme.min.css" afterPath="" />
-      <change type="MOVED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\partials\loader-directory.html" afterPath="$PROJECT_DIR$/app/partials/general/loader-directory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/.bower.json" afterPath="$PROJECT_DIR$/app/bower_components/jquery/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/data/Data.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/data/Data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/effects/Tween.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/effects/Tween.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/css/addGetHookIf.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/css/addGetHookIf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/ajax.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/ajax.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/house/app.js" afterPath="$PROJECT_DIR$/app/js/house/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/attr.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/attr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/bower.json" afterPath="$PROJECT_DIR$/app/bower_components/jquery/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/classes.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/classes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/core.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/css.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/css.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/css/curCSS.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/css/curCSS.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/data.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/css/defaultDisplay.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/css/defaultDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/deferred.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/deferred.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/dimensions.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/dimensions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/effects.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/effects.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/event.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/event.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/css/var/getStyles.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/css/var/getStyles.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/exports/global.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/exports/global.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/core/init.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/core/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/intro.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/intro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/dist/jquery.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/dist/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/jquery.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/dist/jquery.min.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/dist/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/dist/jquery.min.map" afterPath="$PROJECT_DIR$/app/bower_components/jquery/dist/jquery.min.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/main.css" afterPath="$PROJECT_DIR$/app/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main.html" afterPath="$PROJECT_DIR$/app/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/manipulation.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/manipulation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/offset.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/offset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/prop.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/prop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/queue.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/queue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/core/ready.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/core/ready.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/sizzle/dist/sizzle.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/sizzle/dist/sizzle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/sizzle/dist/sizzle.min.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/sizzle/dist/sizzle.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/sizzle/dist/sizzle.min.map" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/sizzle/dist/sizzle.min.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/support.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/css/support.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/css/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/manipulation/support.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/manipulation/support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/traversing.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/traversing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/val.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/attributes/val.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/wrap.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/wrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/jquery/src/ajax/xhr.js" afterPath="$PROJECT_DIR$/app/bower_components/jquery/src/ajax/xhr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/login.css" afterPath="$PROJECT_DIR$/app/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/login.html" afterPath="$PROJECT_DIR$/app/login.html" />
     </list>
     <ignored path="HKR-SmartHouse-Web-Shell.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,9 +61,12 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/house/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1632">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding>
+                <marker date="1420907264435" expanded="true" signature="841:2191" placeholder="[...]" />
+                <marker date="1420907264435" expanded="true" signature="886:2190" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -572,7 +506,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="884">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1420907264435" expanded="true" signature="841:2191" placeholder="[...]" />
+            <marker date="1420907264435" expanded="true" signature="886:2190" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -628,7 +565,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1420907264435" expanded="true" signature="841:2191" placeholder="[...]" />
+            <marker date="1420907264435" expanded="true" signature="886:2190" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -684,7 +624,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1420907264435" expanded="true" signature="841:2191" placeholder="[...]" />
+            <marker date="1420907264435" expanded="true" signature="886:2190" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -732,7 +675,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="833">
           <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding />
+          <folding>
+            <marker date="1420907264435" expanded="true" signature="841:2191" placeholder="[...]" />
+            <marker date="1420907264435" expanded="true" signature="886:2190" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -773,7 +719,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1420907264435" expanded="true" signature="841:2191" placeholder="[...]" />
+            <marker date="1420907264435" expanded="true" signature="886:2190" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -813,7 +762,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="765">
           <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding />
+          <folding>
+            <marker date="1420907264435" expanded="true" signature="841:2191" placeholder="[...]" />
+            <marker date="1420907264435" expanded="true" signature="886:2190" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -977,9 +929,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/house/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1632">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <marker date="1420907264435" expanded="true" signature="841:2191" placeholder="[...]" />
+            <marker date="1420907264435" expanded="true" signature="886:2190" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
