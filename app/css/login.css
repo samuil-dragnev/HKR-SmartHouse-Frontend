@@ -1,21 +1,25 @@
-body {
-    padding: 0;
-}
-.container, .houseselector {
-    float: left;
+.container.well, .house-selector.well {
+    display: inline-block;
+    height: 100%;
     width: 80%;
-    margin-left: 10%;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     border: solid 1px #555;
-    background-color: #eed;
+    background-color: #428bca;
     box-shadow: 10px -10px 5px rgba(0,0,0,0.6), inset 0 0 15px #000000;
     -moz-box-shadow: 10px -10px 5px rgba(0,0,0,0.6), inset 0 0 15px #000000;
     -webkit-box-shadow: 10px -10px 5px rgba(0,0,0,0.6), inset 0 0 15px #000000;
     -o-box-shadow: 10px -10px 5px rgba(0,0,0,0.6), inset 0 0 15px #000000;
 }
-
+#form-container {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
 .form-control.ng-invalid {
     border-color: rgb(237, 19, 55);
     box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset, rgba(237, 19, 55, 0.596078) 0px 0px 7.9595799446106px 0px;
@@ -77,6 +81,45 @@ footer {
     background-color: rgba(0,128,255,0.9) ;
 }
 
+.form-sign-in, .form-house-select {
+    display: inline-block;
+    height: 100%;
+    width: 95%;
+    background-color: #eed;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.6), inset 0 0 20px #428bca;
+    -moz-box-shadow: 0 0  rgba(0,0,0,0.6), inset 0 0 20px #428bca;
+    -webkit-box-shadow: 0 0  5px rgba(0,0,0,0.6), inset 0 0 20px #428bca;
+    -o-box-shadow: 0 0  5px rgba(0,0,0,0.6), inset 0 0 20px #428bca;
+    padding: 5%;
+    border: 0;
+}
+
+.form-house-select select {
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+    height: 60%;
+    -webkit-box-shadow: 0 0 15px #428bca, inset 0 0 15px #428bca;
+    -moz-box-shadow: 0 0 15px #428bca, inset 0 0 15px #428bca;
+    box-shadow: 0 0 15px #428bca, inset 0 0 15px #428bca;
+    border: 2px solid #A2C4E1;
+    border-radius: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.form-house-select .error {
+    height: 5%;
+}
+
+.form-house-select option:hover {
+    background-color: #A2C4E1;
+}
+
+.form-house-select option {
+    font-size: medium;
+    text-align: center;
+}
+
 table {
     width: 80%;
     margin: 4% auto 4% auto;
@@ -88,26 +131,9 @@ tr {
     margin-right: auto;
 }
 
-.imgcontainer{
+.img-container{
     margin-left: auto;
     margin-right: auto;
-}
-.houseselector select option:hover {
-    background-color: #002a80;
-    color: #ffffff;
-
-}
-.houseselector select{
-    margin-left: auto;
-    margin-right: auto;
-    width: 99%;
-}
-.houseselector ul {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
 }
 
 .circle-container {
@@ -141,8 +167,30 @@ tr {
     width: 4em; height: 4em;
     margin: -2em;
 }
-.circle-container img { display: block; width: 100%;
-   
+
+h2, h3 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 0;
+}
+.btn.btn-lg.btn-warning, .btn.btn-lg.btn-primary {
+    width: 49%;
+    margin-top: 2%;
+    display: inline-block;
+}
+#login-inputs-container {
+    height: 55%;
+}
+
+#login-inputs-container input, div {
+    height: 25%;
+}
+.circle-container img {
+    display: block; width: 100%;
+    -webkit-animation-name: rotateItem;
+    -webkit-animation-duration: 6000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
 }
 .circle-container div img {
     border: solid 1px #555;
@@ -151,9 +199,6 @@ tr {
     -webkit-box-shadow: 7px -7px rgba(0,0,0,0.6);
     -o-box-shadow: 7px -7px rgba(0,0,0,0.6);
     border-radius:100px;
-}
-.imgholder {
-    
 }
 #deg0 { transform: translate(12em); } /* 12em = half the width of the wrapper */
 #deg90 {  transform: rotate(90deg) translate(12em) rotate(-90deg); } /* 12em = half the width of the wrapper */
@@ -167,7 +212,7 @@ tr {
     margin-top: 3%;
 }
 
-.rowseperator {
+.row-separator {
     padding: 5%;
 }
 #msform input {

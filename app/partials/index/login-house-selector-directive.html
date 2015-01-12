@@ -1,0 +1,23 @@
+<form class="form-house-select" name="form_house_select"
+      role="form" ng-submit="submit()" novalidate>
+    <h2>Please Select House</h2>
+    <select size="6" name="selectionField" ng-model="house_id" required>
+        <option value="CA">House 1</option>
+        <option value="CO">House 2</option>
+        <option value="CN">House 3</option>
+        <option value="CA">House 1</option>
+        <option value="CO">House 2</option>
+        <option value="CN">House 3</option>
+    </select>
+    <div class="error"
+         ng-show="form_house_select.selectionField.$invalid ">
+        <small class="error" ng-show="form_house_select.selectionField.$error.required">
+            Select a House!
+        </small>
+    </div>
+    <div>
+        <button class="btn btn-lg btn-warning" ng-click="showHouseSelector(false)" name="back" type="button">Back</button>
+        <button class="btn btn-lg btn-primary" ng-disabled="form_house_select.$invalid"
+                name="proceed" type="submit">Proceed</button>
+    </div>
+</form>

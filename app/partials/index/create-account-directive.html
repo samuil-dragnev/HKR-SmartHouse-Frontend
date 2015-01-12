@@ -1,0 +1,182 @@
+<form id="registration_form" class="form-sign-in" name="registration_form"
+      role="form"
+      novalidate ng-submit="submit()">
+    <fieldset ng-show="isAddingPersonalInfo">
+        <h3 class="fs-subtitle">Step 1</h3>
+        <h4 class="title">Enter Personal Info</h4>
+        <input type="text" name="ssn" class="form-control" placeholder="SSN" ng-minlength=10
+               ng-maxlength=10
+               ng-pattern= 'numericPattern'
+               ng-model="login.ssn"
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.ssn.$dirty && registration_form.ssn.$invalid ">
+            <small class="error" ng-show="registration_form.ssn.$error.required">
+                SSN required!
+            </small>
+            <small class="error" ng-show="registration_form.ssn.$error.minlength">
+                SSN is 10 characters.
+            </small>
+            <small class="error" ng-show="registration_form.ssn.$error.maxlength">
+                SSN is 10 characters.
+            </small>
+            <small class="error" ng-show="registration_form.ssn.$error.pattern">
+                Numbers only.
+            </small>
+        </div>
+        <input type="text" name="first-name" class="form-control" placeholder="First Name"
+               ng-minlength=2
+               ng-model="login.first_name"
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.first-name.$dirty && registration_form.first-name.$invalid ">
+            <small class="error" ng-show="registration_form.first-name.$error.required">
+                Required.
+            </small>
+            <small class="error" ng-show="registration_form.first-name.$error.minlength">
+                The minimum length is 2 chars.
+            </small>
+        </div>
+        <input type="text" name="last_name" class="form-control" placeholder="Last Name"
+               ng-model="login.last_name" ng-minlength=2
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.last_name.$dirty && registration_form.last_name.$invalid ">
+            <small class="error" ng-show="registration_form.last_name.$error.required">
+                Required.
+            </small>
+            <small class="error" ng-show="registration_form.last-name.$error.minlength">
+                The minimum length is 2 chars.
+            </small>
+        </div>
+        <input type="email"
+               class="form-control"
+               placeholder="Email"
+               name="email"
+               ng-model="login.email"
+               ng-pattern= 'emailPattern'
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.email.$dirty && registration_form.email.$invalid ">
+            <small class="error" ng-show="registration_form.ssn.$error.required">
+                Required.
+            </small>
+            <small class="error" ng-show="registration_form.email.$error.email">
+                This is not valid email.
+            </small>
+        </div>
+        <input type="password"
+               class="form-control"
+               placeholder="Password"
+               name="password"
+               ng-model="login.password"
+               ng-minlength=6
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.password.$dirty && registration_form.password.$invalid ">
+            <small class="error" ng-show="registration_form.password.$error.required">
+                Required.
+            </small>
+            <small class="error" ng-show="registration_form.password.$error.minlength">
+                Too short!
+            </small>
+        </div>
+        <div>
+            <input type="button" name="back" ng-click="showRegister(true)"
+                   class="btn btn-lg btn-warning" value="Go Back"/>
+            <input type="button" name="next" ng-click="showInfoAdding(false)"
+                   class="btn btn-lg btn-primary" value="Next"/>
+        </div>
+    </fieldset>
+    <fieldset id="second-field" ng-hide="isAddingPersonalInfo">
+        <h2 class="fs-subtitle">Step 2</h2>
+
+        <h3 class="fs-subtitle">Enter House Info</h3>
+        <input type="text" name="city" class="form-control" ng-model="login.city" placeholder="City"
+               ng-minlength=2
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.city.$dirty && registration_form.city.$invalid ">
+            <small class="error" ng-show="registration_form.city.$error.required">
+                Required.
+            </small>
+            <small class="error" ng-show="registration_form.city.$error.minlength">
+                Minimum 2 chars.
+            </small>
+        </div>
+        <input type="text" name="postcode" class="form-control" ng-model="login.postcode"
+               placeholder="Post Code"
+               ng-minlength=5
+               ng-pattern= 'numericPattern'
+               ng-maxlength=5
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.postcode.$dirty && registration_form.postcode.$invalid ">
+            <small class="error" ng-show="registration_form.postcode.$error.required">
+                Required.
+            </small>
+            <small class="error" ng-show="registration_form.postcode.$error.minlength">
+                Post Code's minimum is 5 chars.
+            </small>
+            <small class="error" ng-show="registration_form.postcode.$error.maxlength">
+                Post Code is too long.
+            </small>
+            <small class="error" ng-show="registration_form.postcode.$error.pattern">
+                It should be only numbers.
+            </small>
+        </div>
+        <input type="text" name="street" class="form-control" placeholder="Street Name"
+               ng-model="login.street"
+               ng-minlength=5
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.street.$dirty && registration_form.street.$invalid ">
+            <small class="error" ng-show="registration_form.street.$error.required">
+                Required.
+            </small>
+            <small class="error" ng-show="registration_form.street.$error.minlength">
+                Street Name's minimum is 5 chars.
+            </small>
+        </div>
+        <input type="text" name="street_number" class="form-control"
+               ng-model="login.street_number"
+               placeholder="Street Number"
+               required/>
+
+        <div class="error"
+             ng-show="registration_form.street_number.$dirty && registration_form.street_number.$invalid ">
+            <small class="error" ng-show="registration_form.street_number.$error.required">
+                Required.
+            </small>
+        </div>
+        <input type="text" name="country" class="form-control" placeholder="Country"
+               ng-model="login.country"
+               ng-minlength=2
+               required/>
+        <div class="error"
+             ng-show="registration_form.country.$dirty && registration_form.country.$invalid ">
+            <small class="error" ng-show="registration_form.country.$error.required">
+                Required.
+            </small>
+            <small class="error" ng-show="registration_form.country.$error.minlength">
+                Country Name needs 2 characters.
+            </small>
+        </div>
+        <label for="checkbox">Accept Terms</label>
+        <input type="checkbox" id="checkbox"/>
+        <div>
+            <input type="button" ng-click="showInfoAdding(true)" name="previous"
+                   class="btn btn-lg btn-warning" value="Previous"/>
+            <input type="submit" name="submit"
+                   class="btn btn-lg btn-primary" value="Submit"/>
+        </div>
+    </fieldset>
+</form>

@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var app = angular.module('house-module', ['ngRoute', 'routeStyles', 'house-module-directives', 'houseServices']);
+    var app = angular.module('house-module', ['ngRoute', 'routeStyles', 'house-module-directives', 'houseServices', 'ngAnimate']);
     app.config(['$routeProvider', '$locationProvider',
             function ($routeProvider, $locationProvider) {
                 $routeProvider
@@ -98,8 +98,10 @@
         $scope.isAddingPersonalInfo = true;
         $scope.backToLogin = false;
         $scope.isAuth = false;
-        $scope.showHouseSelector = function () {
-            $scope.isAuth = true;
+        $scope.emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+        $scope.numericPattern = /^\d+$/;
+        $scope.showHouseSelector = function (condition) {
+            $scope.isAuth = condition;
         };
         $scope.showInfoAdding = function (condition) {
             $scope.isAddingPersonalInfo = condition;
@@ -112,7 +114,7 @@
         };
         $scope.authenticate = function () {
             //$timeout(function () { $location.path("/house"); }, 3000);
-            $scope.showHouseSelector();
+            $scope.showHouseSelector(true);
         };
         $scope.submit = function () {
             $timeout(function () { $location.path("/house"); }, 3000);
