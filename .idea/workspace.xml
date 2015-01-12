@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="146b9e61-4fe0-42a7-848f-278d986fd587" name="Default" comment="Modification on the routing.">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\js\lib\bootstrap-switch.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\js\lib\index.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\workspace\HKR-SmartHouse-Web-Shell\app\js\lib\indexswitchbutton.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/angular.min.js.gzip" afterPath="$PROJECT_DIR$/app/bower_components/angular/angular.min.js.gzip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/.bower.json" afterPath="$PROJECT_DIR$/app/bower_components/angular/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/README.md" afterPath="$PROJECT_DIR$/app/bower_components/angular/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/angular-csp.css" afterPath="$PROJECT_DIR$/app/bower_components/angular/angular-csp.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/angular.js" afterPath="$PROJECT_DIR$/app/bower_components/angular/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/angular.min.js.map" afterPath="$PROJECT_DIR$/app/bower_components/angular/angular.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/angular.min.js" afterPath="$PROJECT_DIR$/app/bower_components/angular/angular.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/anim.css" afterPath="$PROJECT_DIR$/app/css/anim.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/house/app.js" afterPath="$PROJECT_DIR$/app/js/house/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/bower.json" afterPath="$PROJECT_DIR$/app/bower_components/angular/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/house/directives.js" afterPath="$PROJECT_DIR$/app/js/house/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/login.css" afterPath="$PROJECT_DIR$/app/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/login.html" afterPath="$PROJECT_DIR$/app/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/bower_components/angular/package.json" afterPath="$PROJECT_DIR$/app/bower_components/angular/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/main.css" afterPath="$PROJECT_DIR$/app/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main.html" afterPath="$PROJECT_DIR$/app/main.html" />
     </list>
     <ignored path="HKR-SmartHouse-Web-Shell.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,20 +38,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.327273" vertical-offset="0" max-vertical-offset="510">
+            <state vertical-scroll-proportion="0.44155845" vertical-offset="0" max-vertical-offset="539">
               <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-account-directive.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create-account-directive.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/partials/index/create-account-directive.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2340791" vertical-offset="2360" max-vertical-offset="3179">
+            <state vertical-scroll-proportion="-27.576923" vertical-offset="2360" max-vertical-offset="3179">
               <caret line="181" column="7" selection-start-line="181" selection-start-column="7" selection-end-line="181" selection-end-column="7" />
               <folding />
             </state>
@@ -77,8 +61,8 @@
       <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/css/login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.62069" vertical-offset="2936" max-vertical-offset="3859">
-              <caret line="184" column="23" selection-start-line="184" selection-start-column="14" selection-end-line="184" selection-end-column="23" />
+            <state vertical-scroll-proportion="-6.62069" vertical-offset="3106" max-vertical-offset="3706">
+              <caret line="194" column="23" selection-start-line="194" selection-start-column="23" selection-end-line="194" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -132,8 +116,8 @@
         <option value="$PROJECT_DIR$/app/partials/index/login-house-selector-directive.html" />
         <option value="$PROJECT_DIR$/app/partials/index/login-user-authentication-directive.html" />
         <option value="$PROJECT_DIR$/app/partials/index/image-container-directive.html" />
-        <option value="$PROJECT_DIR$/app/partials/index/create-account-directive.html" />
         <option value="$PROJECT_DIR$/app/js/house/directives.js" />
+        <option value="$PROJECT_DIR$/app/partials/index/create-account-directive.html" />
         <option value="$PROJECT_DIR$/app/login.html" />
       </list>
     </option>
@@ -404,7 +388,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -845,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.62069" vertical-offset="2936" max-vertical-offset="3859">
-          <caret line="184" column="23" selection-start-line="184" selection-start-column="14" selection-end-line="184" selection-end-column="23" />
+        <state vertical-scroll-proportion="-6.62069" vertical-offset="3106" max-vertical-offset="3706">
+          <caret line="194" column="23" selection-start-line="194" selection-start-column="23" selection-end-line="194" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -859,18 +843,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/login.html">
+    <entry file="file://$PROJECT_DIR$/app/partials/index/create-account-directive.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.327273" vertical-offset="0" max-vertical-offset="510">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        <state vertical-scroll-proportion="-27.576923" vertical-offset="2360" max-vertical-offset="3179">
+          <caret line="181" column="7" selection-start-line="181" selection-start-column="7" selection-end-line="181" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/partials/index/create-account-directive.html">
+    <entry file="file://$PROJECT_DIR$/app/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2340791" vertical-offset="2360" max-vertical-offset="3179">
-          <caret line="181" column="7" selection-start-line="181" selection-start-column="7" selection-end-line="181" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.44155845" vertical-offset="0" max-vertical-offset="539">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
           <folding />
         </state>
       </provider>

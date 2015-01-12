@@ -136,7 +136,34 @@
                             </td>
                             <td>
                                 <div id="adding">
+                                                <div id="addingdevicewell well" style="height: 70%;">
+                                                    <label id="selectroomlabel" for="selectRoom">This is where you add a device to a room</label>
+                                                    <div id="selectRoom" style="padding-bottom: 0.5%; height:90%;">
+                                                        <select style="padding: 2%; height: 80%;" id="roomselect" multiple>
+                                                            <option id="optionrooms" style="padding: 2%;" value="1" ng-repeat="room in house[3].rooms">{{room.name}}</option>
+                                                        </select>
+                                                            <div>
+                                                                <form style="padding: 1%;" name="addDevice_form" role="form" novalidate
+                                                                      ng-submit="">
+                                                                    <div>
+                                                                        <input id="devicetoaddfield" type="text" placeholder="Device to Add">
+                                                                        <input id="adddevicebtn" class="btn btn-lg btn-primary btn-sm" type="submit" value="Add Device">
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                    </div>
+                                                </div>
 
+                                                <div class="addingroomwell well" style="height: 25%; margin-top: 5%;">
+                                                    <label id="addroomlabel" style="padding: 1%;">This is where you add a room</label>
+                                                    <form name="addRoom_form" role="form" novalidate
+                                                          ng-submit="">
+                                                        <div>
+                                                            <input id="roomtoaddfield"  type="text" placeholder="Room to Add">
+                                                            <input id="addroombtn" class="btn btn-lg btn-primary btn-sm"  type="submit" value="Add Room">
+                                                        </div>
+                                                    </form>
+                                                </div>
                                 </div>
                             </td>
                         </tr>
