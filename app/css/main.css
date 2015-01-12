@@ -145,6 +145,43 @@
     width: 100%;
     border: 2px solid #428bca;
 }
+#addingtable  {
+   border-collapse: collapse;
+}
+#rowseperator {
+    margin-bottom: 5%;
+    padding: 4%;
+}
+#devicetoaddfield, #roomtoaddfield {
+    -webkit-box-shadow: 0 0 8px #428bca, inset 0 0 15px #428bca;
+    -moz-box-shadow: 0 0 8px #428bca, inset 0 0 15px #428bca;
+    box-shadow: 0 0 8px #428bca, inset 0 0 15px #428bca;
+    border: 2px solid #428BCA;
+    border-radius: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 2%;
+}
+.addingroomwell.well {
+    padding: 0;
+}
+#optionrooms {
+    -webkit-box-shadow: 0 0 5px #428bca, inset 0 0 15px #428bca;
+    -moz-box-shadow: 0 0 5px #428bca, inset 0 0 15px #428bca;
+    box-shadow: 0 0 5px #428bca, inset 0 0 15px #428bca;
+    border: 1px solid #428BCA;
+    border-radius: 1px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+#selectroomlabel {
+    padding-bottom: 2%;
+}
+#addroomlabel, #selectroomlabel {
+    padding: 1%;
+    font-family: Consolas;
+    font-size: large;
+    font-style: oblique;
+    margin-bottom: 2%;
+}
 
 .admin-service th {
     text-align: center;
@@ -171,7 +208,11 @@
     height: 100%;
     padding: 2%;
 }
-#deviceSelect, #userSelect {
+
+#roomselect {
+    width: 50%;
+}
+#deviceSelect, #userSelect, #roomselect {
     margin-left: auto;
     margin-right: auto;
     -webkit-box-shadow: 0 0 15px #428bca, inset 0 0 15px #428bca;

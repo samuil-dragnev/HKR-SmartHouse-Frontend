@@ -155,9 +155,6 @@
                                     Password needs 6 characters!
                                 </small>
                             </div>
-                            <label class="checkbox">
-                                <input type="checkbox" value="remember-me"> Accept Terms
-                            </label>
                             <table>
                                 <tbody>
                                 <tr>
@@ -174,9 +171,9 @@
                             </table>
                         </fieldset>
                         <fieldset id="secondfield" ng-hide="isAddingPersonalInfo">
-                            <h2 class="fs-subtitle">Step 2</h2>
+                            <h3 class="fs-subtitle">Step 2</h3>
 
-                            <h3 class="fs-subtitle">Enter House Info</h3>
+                            <h4 class="fs-subtitle">Enter House Info</h4>
                             <input type="text" name="city" class="form-control" ng-model="login.city" placeholder="City"
                                    ng-minlength=2
                                    required/>
@@ -258,6 +255,10 @@
                                         <input type="submit" name="submit"
                                                class="btn btn-lg btn-primary btn-block actionbuttons" value="Submit"/>
                                     </td>
+                                    <div>
+                                        <label for="checkbox">Accept Terms</label>
+                                        <input type="checkbox" id="checkbox" value="remember-me">
+                                    </div>
                                 </tr>
                                 </tbody>
                             </table>
@@ -335,29 +336,4 @@
             <a href="http://www.hkr.se/en/education/course-page/?cCode=DA540C">Software Engineering 2 at HKR</a></span>
     </footer>
 </div>
-<script>
-    $(document).ready(function () {
-        $(".circle-container").hover(
-                function () {
-                    $(this).css("-webkit-animation-play-state", "paused");
-                    $(".icons").css("-webkit-animation-play-state", "paused");
-                    //$(this).children(".icons").css("-webkit-animation-duration", "10000ms");
-                },
-                function () {
-                    $(this).css("-webkit-animation-play-state", "running");
-                    $(".icons").css("-webkit-animation-play-state", "running");
-                    //$(this).children(".icons").css("-webkit-animation-duration", "6000ms");
-                });
-        $(".icons").hover(
-                function () {
-                    $(this).css("-webkit-animation-play-state", "paused");
-                    $(this).siblings(".iconinfo").show();
-                    //$(this).parent(".circle-container").css("-webkit-animation-play-state", "paused");
-                },
-                function () {
-                    $(this).css("-webkit-animation-play-state", "running");
-                    $(this).siblings(".iconinfo").hide();
-                    //$(this).parent(".circle-container").css("-webkit-animation-play-state", "running");
-                });
-    });
-</script>
+
