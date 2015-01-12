@@ -79,26 +79,6 @@
                         "name": "ventilation",
                         "state": false,
                         "image": ""
-                    },
-                    {
-                        "name": "Fridge",
-                        "state": true,
-                        "image": ""
-                    },
-                    {
-                        "name": "Fridge",
-                        "state": true,
-                        "image": ""
-                    },
-                    {
-                        "name": "Fridge",
-                        "state": true,
-                        "image": ""
-                    },
-                    {
-                        "name": "Fridge",
-                        "state": true,
-                        "image": ""
                     }
                 ],
                 "selected": 1
@@ -164,7 +144,7 @@
                         "image": ""
                     }
                 ],
-                "selected": 4
+                "selected": 8
             },
             {
                 "name": "Office",
@@ -185,7 +165,7 @@
                         "image": ""
                     }
                 ],
-                "selected": 5
+                "selected": 4
             },
             {
                 "name": "Basement",
@@ -206,7 +186,7 @@
                         "image": ""
                     }
                 ],
-                "selected": 6
+                "selected": 124
             }
         ]
     }

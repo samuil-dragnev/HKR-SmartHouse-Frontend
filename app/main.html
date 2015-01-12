@@ -2,12 +2,12 @@
     <div class="container">
         <a id="logo" href="index.html"><img src="img/logo.png" width="30" height="30"></a>
         <span id="address">{{house[0].address}}</span>
-        <button class="btn btn-sm btn-warning" name="logout" title="logout" id="logOutBtn">
+        <button class="btn btn-sm btn-warning" name="logout" ng-click="logout()" title="logout" id="logOutBtn">
             <span class="glyphicon glyphicon-off"></span> Log Out
         </button>
         <button class="btn btn-sm btn-warning" name="Admin Page" ng-click="showAdmin()" title="adminpage"
                 id="admin-button">
-            <span class="glyphicon glyphicon-on"></span> Admin
+            <span class="glyphicon glyphicon-wrench"></span> Admin
         </button>
     </div>
 </nav>
@@ -18,47 +18,35 @@
             <td id="selector">
                 <div id="leftBar" class="well">
                     <div>
-                        <ul class="nav nav-tabs" id="op">
-                            <li class="active" role="presentation">
-                                <a ng-click="setRoom(lastRoom)" name="interior" data-toggle="tab">Interior</a>
+                        <ul class="nav nav-tabs nav-justified">
+                            <li ng-class="{active: isLocationSelected(1)}" role="presentation">
+                                <a ng-click="setRoom(lastRoom); setSelectedLocation(1)">Interior</a>
                             </li>
-                            <li role="presentation">
-                                <a ng-click="setRoom({})" name="exterior" data-toggle="tab">Exterior</a>
-                            </li>
-                            <li role="presentation">
-                                <a ng-click="setRoom({})" name="alarms" data-toggle="tab">Alarms</a>
+                            <li ng-class="{active: isLocationSelected(2)}" role="presentation">
+                                <a ng-click="setRoom({}); setSelectedLocation(2)">Exterior</a>
                             </li>
                         </ul>
                     </div>
                     <div id="tabs">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="interior">
-                                <ul class="nav nav-pills nav-stacked" ng-repeat="room in house[3].rooms">
-                                    <li ng-class="{ active: isSelected(room.selected)}">
-                                        <a ng-click="selectTab(room.selected); setRoom(room)">{{room.name}}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" id="exterior">
-                                <ul class="nav nav-pills nav-stacked" ng-repeat="out in house[2].outside">
-                                    <li ng-class="{ active: isSelected(out.selected)}">
-                                        <a ng-click="selectTab(out.selected);">{{out.name}}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" id="alarms">
-                                <ul class="nav nav-pills nav-stacked" ng-repeat="alarm in house[1].alarms">
-                                    <li ng-class="{ active: isSelected(alarm.selected)};">
-                                        <a ng-click="selectTab(alarm.selected);">{{alarm.name}}</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div ng-show="isLocationSelected(1)" class="tab-pane active" id="interior">
+                            <ul class="nav nav-pills nav-stacked" ng-repeat="room in house[3].rooms">
+                                <li ng-class="{ active: isSelected(room.selected)}">
+                                    <a ng-click="selectTab(room.selected); setRoom(room)">{{room.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div ng-show="isLocationSelected(2)" class="tab-pane" id="exterior">
+                            <ul class="nav nav-pills nav-stacked" ng-repeat="out in house[2].outside">
+                                <li ng-class="{ active: isSelected(out.selected)}">
+                                    <a ng-click="selectTab(out.selected);">{{out.name}}</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </td>
             <td id="devices">
-                <section class="content" ng-hide="isSwitched">
+                <section class="content device-container" ng-hide="isSwitched">
                     <div ng-repeat="device in room.devices">
                         <div class="row-horizontal">
                             <div class="col-sm-6 col-md-4">
@@ -76,10 +64,10 @@
 
                                         <div>
                                             <div class="btn-group btn-toggle">
-                                                <button ng-class="{'active btn-primary': device.state}"
+                                                <button ng-class="{'active btn-success': device.state}"
                                                         ng-click="device.state = true" class="btn btn-default">ON
                                                 </button>
-                                                <button ng-class="{'active btn-primary' : !device.state}"
+                                                <button ng-class="{'active btn-danger' : !device.state}"
                                                         ng-click="device.state = false" class="btn btn-default">OFF
                                                 </button>
                                             </div>
@@ -91,7 +79,69 @@
                     </div>
                 </section>
                 <div class="content" ng-show="isSwitched">
-                    <admin-panel></admin-panel>
+                    <table class="admin-service">
+                        <thead>
+                        <tr id="admin-caption">
+                            <th class="service-title">Authorize Users</th>
+                            <th class="service-title">Add Room or Device</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div id="authorization">
+                                    <div ng-show="checkForNonAuthUsers()" id="pending">
+                                        <form id="authUser">
+                                            <div id="fieldUserSelect" ng-show="formAuthUser">
+                                                <label for="userSelect">Select a User</label>
+
+                                                <div>
+                                                    <select id="userSelect">
+                                                        <option value="1"><span>Name:</span> <span>Email:</span>
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <button class="btn btn-lg btn-primary" ng-click="nextAuthUser(false)"
+                                                        name="next-auth" id="next-auth">
+                                                    Next
+                                                </button>
+                                            </div>
+                                            <div id="fieldDeviceSelect" ng-hide="formAuthUser">
+                                                <label for="deviceSelect">Select Devices</label>
+                                                <div style="height: 75%; padding-bottom: 0.5%">
+                                                    <select id="deviceSelect" multiple>
+                                                        <optgroup label="{{room.name}}" ng-repeat="room in house[3].rooms">
+                                                            <option value="1" ng-repeat="device in room.devices">
+                                                                <span>{{device.name}}</span>
+                                                            </option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                                <div style="padding-bottom: 1%"><span>*Press Ctrl to select multiple devices.</span></div>
+                                                <button class="btn btn-lg btn-warning" ng-click="nextAuthUser(true)"
+                                                        name="back-auth" id="back-auth">
+                                                    Back
+                                                </button>
+                                                <button class="btn btn-lg btn-primary" ng-click="nextAuthUser(true)"
+                                                    name="submit" id="submit-auth">
+                                                    Approve
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div ng-hide="checkForNonAuthUsers()" id="no-pending">
+                                        <span>There are no current<br/>registration requests!</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="adding">
+
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </td>
         </tr>
@@ -104,3 +154,16 @@
         <span id="info">Some stuff</span>
     </div>
 </nav>
+<div id="overlayAlarm" ng-show="isAlarm">
+    <div class="alarmMessage well">
+        <span>The {{getActivateAlarm().name}} is ON!</span>
+    </div>
+    <button type="button" class="btn btn-lg btn-danger" ng-click="closeAlarm(getActivateAlarm().id)">Turn Off</button>
+</div>
+<!--
+Images data:;base64,
+<audio autoplay>
+  <source src="" type="audio/mp3">
+</audio>
+-->
+

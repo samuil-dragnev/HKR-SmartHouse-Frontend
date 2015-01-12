@@ -1,3 +1,4 @@
+/*General*/
 #view {
     position: fixed;
     bottom: 50px;
@@ -9,51 +10,76 @@
     width: 100%;
     height: 100%;
 }
+
+#blur {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 50px;
+    top: 50px;
+    width: 100%;
+}
+#overlayAlarm {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0.85);
+    z-index:9999;
+    color:white;
+}
+
+.alarmMessage.well {
+    width: 50%;
+    height: 50%;
+    margin: 5% auto 5% auto;
+    color: #000000;
+    font-size: large;
+    font-style: oblique;
+    font-family: Trebuchet MS, Helvetica, Arial, sans-serif;
+    -webkit-box-shadow: 0 0 20px #D9534F, inset 0 0 20px #D9534F;
+    -moz-box-shadow: 0 0 20px #D9534F, inset 0 0 20px #D9534F;
+    box-shadow: 0 0 20px #D9534F, inset 0 0 20px #D9534F;
+    border: 2px solid #E8A9A7;
+}
+
+/*General*/
+
+/*Header And Footer Main Page */
+#topBar, #bottomBar {
+    background-color: #428bca;
+    border-color: #357ebd;
+    color: #fff;
+    margin: 0 0 0 0;
+}
+
+.container {
+    width: 98%;
+    margin: 0 auto 0 auto;
+}
+
+#logOutBtn {
+    float: right;
+    margin: 10px 10px 10px 10px;
+}
+
+#admin-button {
+    float: right;
+    margin: 10px 10px 10px 10px;
+}
+
+#address, #info, #logo {
+    float: left;
+    height: 30px;
+    margin: 10px 10px 10px 10px;
+}
+/*Header And Footer Main Page */
+
+/*Left side bar*/
 #tabs {
     margin-top: 5%;
-    padding-right: 35%;
-}
-.auth-pane.well {
-    width: 100%;
-    height: 100%;
-    display: table;
-    table-layout: fixed;
-    padding: 0;
-}
-
-.auth.well {
-    width: 75%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: table-cell;
-    border: 2px solid #00498f;
-    padding: 0;
-}
-.auth.well th {
-    background-color: #00498f;
-    color: #ffffff;
-    padding: 2px;
-}
-.title {
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-}
-.auth.well {
-
-}
-
-.table-user {
-    width: 23%;
-    padding: 1%;
-    border: 1px solid #00498f;
-}
-
-.table-device {
-    width: 73%;
-    padding: 1%;
-    border: 1px solid #00498f;
+    overflow: scroll;
+    height: 90%;
 }
 #leftBar.well {
     line-height: 30px;
@@ -74,99 +100,162 @@
     position: fixed;
 }
 
-.list-group-item:focus {
-    background-color: #428BCA;
-    -moz-box-shadow: inset 0 0 3px #000000;
-    -webkit-box-shadow: inset 0 0 3px #000000;
-    box-shadow: inset 0 0 3px #000000;
-}
-.list-group {
-    margin: 0;
-    padding-bottom: 1%;
+.nav-tabs.nav-justified>li>a {
+    border: 1px solid #AEAFB0;
+    border-radius: 4px;
 }
 
-#admin-content {
-    padding-top: 1%;
-}
-
-#nav-user a, #nav-add a{
+.nav-tabs.nav-justified>.active>a,
+.nav-tabs.nav-justified>.active>a:hover,
+.nav-tabs.nav-justified>.active>a:focus {
     background-color: #428bca;
+    border: 1px solid #AEAFB0;
     color: #ffffff;
 }
 
-#nav-user a:hover, #nav-add a:hover{
-    background-color: #88C4F7;
-    color: #000000;
-}
+/*Left side bar*/
 
-#blur {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    bottom: 50px;
-    top: 50px;
-    width: 100%;
-}
-
-.content.admin-pane.well {
-    display: table-cell;
-}
-
+/*Right side container*/
 #devices {
     width: 75%;
     bottom: 50px;
     top: 50px;
     padding: 1%;
 }
-.content, .accordion {
+
+.content {
     width: 100%;
     height: 100%;
-    display: table;
-    table-layout: fixed;
     background-color: #f5f5f5;
     border-radius: 5px;
+    border: 2px solid #428bca;
+    -moz-box-shadow: 0 0 15px #428bca;
+    -webkit-box-shadow: 0 0 15px #428bca;
+    box-shadow: 0 0 15px #428bca;
+}
+.device-container {
+    padding: 1%;
+    overflow: scroll;
+}
+/**/
+
+/*Admin option tabs*/
+.admin-service {
+    height: 100%;
+    width: 100%;
+    border: 2px solid #428bca;
 }
 
-.thumbnail {
-    background-color: rgba(0, 128, 255,0.9);
-    border: 2px solid rgba(0, 0, 0, 0.4);
-}
-
-h3 {
+.admin-service th {
+    text-align: center;
+    font-family: Consolas;
+    background-color: #428bca;
     color: #ffffff;
 }
-
-#logOutBtn {
-    float: right;
-    margin: 10px 10px 10px 10px;
+.admin-service td {
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    -moz-box-shadow: inset 0 0 15px #000000;
+    -webkit-box-shadow: inset 0 0 15px #000000;
+    box-shadow: inset 0 0 15px #000000;
 }
 
-#admin-button {
-    float: right;
-    margin: 10px 10px 10px 10px;
+#userSelect{
+    width: 80%;
+    height: 10%;
+    font-size: large;
+}
+#deviceSelect {
+    width: 60%;
+    height: 100%;
+    padding: 2%;
+}
+#deviceSelect, #userSelect {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: 0 0 15px #428bca, inset 0 0 15px #428bca;
+    -moz-box-shadow: 0 0 15px #428bca, inset 0 0 15px #428bca;
+    box-shadow: 0 0 15px #428bca, inset 0 0 15px #428bca;
+    border: 2px solid #A2C4E1;
+    border-radius: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+#deviceSelect optgroup {
+    border: 2px solid #A2C4E1;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 4px;
+    background-color: #E3EEF7;
+}
+#deviceSelect option:hover {
+    background-color: #A2C4E1;
+}
+#pending {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+#authUser {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
 
-#address, #info, #logo {
-    float: left;
+#deviceSelect option {
+    font-size: medium;
+    text-align: center;
+}
+#fieldUserSelect {
+    padding-top: 20%;
+}
+#fieldDeviceSelect {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+#next-auth {
+    margin-top: 30%;
+}
+#no-pending {
+    margin-top: 20%;
+}
+#no-pending span, #pending label {
+    font-family: Consolas;
+    font-size: large;
+    font-style: oblique;
+    margin-bottom: 2%;
+}
+
+#admin-caption {
     height: 30px;
-    margin: 10px 10px 10px 10px;
 }
 
-#topBar, #bottomBar {
-    background-color: #428bca;
-    border-color: #357ebd;
-    color: #fff;
-    margin: 0 0 0 0;
-}
-
-.container {
+#authorization,
+#adding {
+    height: 98%;
     width: 98%;
     margin: 0 auto 0 auto;
+}
+/*Admin option tabs*/
+
+/*Devices panel*/
+.thumbnail {
+    background-color: #E3EEF7;
+    -webkit-box-shadow: inset 0 0 15px #428bca;
+    -moz-box-shadow: inset 0 0 15px #428bca;
+    box-shadow: inset 0 0 15px #428bca;
+    border: 2px solid #A2C4E1;
+    color: #000000;
+    font-size: medium;
+    font-style: oblique;
+    font-family: Consolas;
 }
 
 .caption > h3 {
     margin-left: auto;
     margin-right: auto;
-    width: 25%;
+    width: 80%;
 }
 
 .caption > div > div {
@@ -179,3 +268,10 @@ h3 {
     margin-left: 40%;
     margin-right: 40%;
 }
+/*Devices Panel*/
+
+
+
+
+
+

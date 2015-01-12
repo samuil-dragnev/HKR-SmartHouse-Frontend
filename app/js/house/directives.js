@@ -19,24 +19,12 @@
         };
     });
 
-    app.directive('showTab',
-        function () {
-            return {
-                link: function (scope, element) {
-                    element.click(function(e) {
-                        e.preventDefault();
-                        $(element).tab('show');
-                    });
-                }
-            };
-        });
-
     app.directive('adminPanel', function () {
         return {
             scope: true,
-            restrict: 'E',
+            restrict: 'EA',
             templateUrl: 'partials/admin/admin-panel-directive.html',
-            link: function(scope, element) {
+            link: function (scope, element) {
                 element.addClass('admin-pane');
             }
         };
@@ -45,10 +33,10 @@
     app.directive('authorizeUser', function () {
         return {
             scope: true,
-            restrict: 'E',
+            restrict: 'EA',
             templateUrl: 'partials/admin/authz-panel-directive.html',
             link: function(scope, element) {
-                element.addClass('auth-pane well');
+                element.addClass('auth-pane');
             }
         };
     });

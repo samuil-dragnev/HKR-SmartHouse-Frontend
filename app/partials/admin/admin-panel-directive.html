@@ -1,16 +1,16 @@
-<ul class="nav nav-tabs nav-justified">
-    <li id="nav-user" class="active" role="presentation">
-        <a show-tab="" href="#auth" name="authz-user" data-toggle="tab">Authorize Users</a>
-    </li>
-    <li id="nav-add" role="presentation">
-        <a show-tab="" href="#adding" name="add-room-device" data-toggle="tab">Add Room or Device</a>
-    </li>
-</ul>
-<div class="tab-content" id="admin-content">
-    <div class="tab-pane active" id="auth">
-        <authorize-user></authorize-user>
-    </div>
-    <div class="tab-pane" id="adding">
-        <add-room-device></add-room-device>
-    </div>
+<div id="admin-caption">
+    <ul class="nav nav-tabs nav-justified">
+        <li ng-class="{active:isAdminTabSelected(1)}" id="nav-user" role="presentation">
+            <a ng-click="adminTabSet(1)" name="authorize-user">Authorize Users</a>
+        </li>
+        <li ng-class="{active:isAdminTabSelected(2)}" id="nav-add" role="presentation">
+            <a ng-click="adminTabSet(2)" name="add-room-device" data-toggle="tab">Add Room or Device</a>
+        </li>
+    </ul>
+</div>
+<div ng-show="isAdminTabSelected(1)" id="authTab">
+    <div authorize-user=""></div>
+</div>
+<div ng-show="isAdminTabSelected(2)" id="adding">
+    <add-room-device></add-room-device>
 </div>

@@ -19,58 +19,95 @@
     );
 
     app.controller('MainController', ['$http', '$scope', function ($http, $scope) {
-        $scope.isSwitched = false;
-        $scope.room = {};
-        $scope.lastRoom = {};
-        $scope.selectedClass = "list-group-item";
-        $scope.adminOption = true;
-
-        $scope.adminPane = function (option) {
-            $scope.adminOption = option;
+        /*Used for the transition of the form filling process
+        in regard to user authorization*/
+        $scope.formAuthUser = true;
+        $scope.nextAuthUser = function (condition) {
+            $scope.formAuthUser = condition;
         };
-        $scope.changeClass = function () {
-            if ($scope.class === "list-group-item") {
-                $scope.class = "list-group-item disabled";
+        /*Used to show/hide the admin panel*/
+        $scope.isSwitched = false;
+        $scope.showAdmin = function () {
+            if ($scope.isSwitched) {
+                $scope.isSwitched = false;
             } else {
-                $scope.class = "list-group-item";
+                $scope.isSwitched = true;
             }
         };
-
+        /*Used in displaying of the devices in
+        particular room according to the tab
+        selected, including a record of the
+        last room selected, when switching
+        between panels*/
+        $scope.tab = 0;
+        $scope.room = {};
+        $scope.lastRoom = {};
+        $scope.location = 1;
+        $scope.setSelectedLocation = function (selected) {
+            $scope.location = selected;
+        };
+        $scope.isLocationSelected = function (selected) {
+            return $scope.location === selected;
+        };
+        $scope.selectTab = function (setTab) {
+            $scope.tab = setTab;
+            $scope.isSwitched = false;
+        };
+        $scope.isSelected = function (checkTab) {
+            return $scope.tab === checkTab;
+        };
         $scope.setRoom = function (room) {
             if (!jQuery.isEmptyObject(room)) {
                 $scope.lastRoom = room;
             }
             $scope.room = room;
         };
-        $scope.showAdmin = function() {
-            $scope.isSwitched = true;
+
+        $scope.checkForNonAuthUsers = function () {
+            var nonAuthUsers = 1;
+            if (nonAuthUsers > 0) {
+                return true;
+            } else {
+                return false;
+            }
         };
+        //Method handling the logging out
+        $scope.logout = function () {
+
+        };
+
         $scope.house = [];
         $http.get("data//house.json").success(function (data) {
             $scope.house = data;
         });
-        $scope.tab = 0;
-        $scope.selectTab = function (setTab) {
-            $scope.tab = setTab;
-            $scope.isSwitched = false;
+
+        $scope.isAlarm = true;
+
+        $scope.getActivateAlarm = function () {
+            var alarm = {"id": 1, "name": "Fire", "state": true };
+            return alarm;
         };
 
-        $scope.isSelected = function (checkTab) {
-            return $scope.tab === checkTab;
-        };
-        $scope.getAllRooms = function() {
-            return $scope.house[3].rooms;
+        $scope.closeAlarm = function (id) {
+            $scope.isAlarm = false;
         };
     }]);
 
     app.controller('LoginController', ['$scope', '$location', '$timeout', function ($scope, $location, $timeout) {
         $scope.isRegistered = true;
+        $scope.isAddingPersonalInfo = true;
+        $scope.backToLogin = false;
         $scope.isAuth = false;
         $scope.showHouseSelector = function () {
             $scope.isAuth = true;
-            console.log("testing");
         };
-        $scope.showRegister = function(condition) {
+        $scope.showInfoAdding = function (condition) {
+            $scope.isAddingPersonalInfo = condition;
+        };
+        $scope.goBackToLogin = function () {
+            $scope.backToLogin = true;
+        };
+        $scope.showRegister = function (condition) {
             $scope.isRegistered = condition;
         };
         $scope.authenticate = function () {
