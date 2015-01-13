@@ -29,15 +29,15 @@
                     </div>
                     <div id="tabs">
                         <div ng-show="isLocationSelected(1)" class="tab-pane active" id="interior">
-                            <ul class="nav nav-pills nav-stacked" ng-repeat="room in house[3].rooms">
-                                <li ng-class="{ active: isSelected(room.selected)}">
+                            <ul class="nav nav-pills nav-stacked" ng-repeat="room in rooms">
+                                <li ng-class="{ active: isSelected(room.id)}">
                                     <a ng-click="selectTab(room.selected); setRoom(room)">{{room.name}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div ng-show="isLocationSelected(2)" class="tab-pane" id="exterior">
                             <ul class="nav nav-pills nav-stacked" ng-repeat="out in house[2].outside">
-                                <li ng-class="{ active: isSelected(out.selected)}">
+                                <li ng-class="{ active: isSelected(out.id)}">
                                     <a ng-click="selectTab(out.selected);">{{out.name}}</a>
                                 </li>
                             </ul>
@@ -65,10 +65,10 @@
                                         <div>
                                             <div class="btn-group btn-toggle">
                                                 <button ng-class="{'active btn-success': device.state}"
-                                                        ng-click="device.state = true" class="btn btn-default">ON
+                                                        ng-click="device.state = true; changeDeviceState(room.id, device.id, true)" class="btn btn-default">ON
                                                 </button>
                                                 <button ng-class="{'active btn-danger' : !device.state}"
-                                                        ng-click="device.state = false" class="btn btn-default">OFF
+                                                        ng-click="device.state = false; changeDeviceState(room.id, device.id, false)" class="btn btn-default">OFF
                                                 </button>
                                             </div>
                                         </div>
@@ -136,7 +136,7 @@
                             </td>
                             <td>
                                 <div id="adding">
-                                                <div id="addingdevicewell well" style="height: 70%;">
+                                                <div id="addingdevicewell well">
                                                     <label id="selectroomlabel" for="selectRoom">This is where you add a device to a room</label>
                                                     <div id="selectRoom" style="padding-bottom: 0.5%; height:90%;">
                                                         <select style="padding: 2%; height: 80%;" id="roomselect" multiple>

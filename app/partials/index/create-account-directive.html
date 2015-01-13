@@ -1,17 +1,16 @@
 <form id="registration_form" class="form-sign-in" name="registration_form"
       role="form"
-      novalidate ng-submit="submit()">
+      novalidate ng-submit="registerUser(user)">
     <fieldset ng-show="isAddingPersonalInfo">
         <h3 class="fs-subtitle">Step 1</h3>
         <h4 class="title">Enter Personal Info</h4>
         <input type="text" name="ssn" class="form-control" placeholder="SSN" ng-minlength=10
                ng-maxlength=10
                ng-pattern= 'numericPattern'
-               ng-model="login.ssn"
+               ng-model="user.ssn"
                required/>
 
-        <div class="error"
-             ng-show="registration_form.ssn.$dirty && registration_form.ssn.$invalid ">
+        <div class="error" ng-show="registration_form.ssn.$dirty && registration_form.ssn.$invalid ">
             <small class="error" ng-show="registration_form.ssn.$error.required">
                 SSN required!
             </small>
@@ -27,7 +26,7 @@
         </div>
         <input type="text" name="first-name" class="form-control" placeholder="First Name"
                ng-minlength=2
-               ng-model="login.first_name"
+               ng-model="user.first_name"
                required/>
 
         <div class="error"
@@ -40,7 +39,7 @@
             </small>
         </div>
         <input type="text" name="last_name" class="form-control" placeholder="Last Name"
-               ng-model="login.last_name" ng-minlength=2
+               ng-model="user.last_name" ng-minlength=2
                required/>
 
         <div class="error"
@@ -56,7 +55,7 @@
                class="form-control"
                placeholder="Email"
                name="email"
-               ng-model="login.email"
+               ng-model="user.email"
                ng-pattern= 'emailPattern'
                required/>
 
@@ -73,7 +72,7 @@
                class="form-control"
                placeholder="Password"
                name="password"
-               ng-model="login.password"
+               ng-model="user.password"
                ng-minlength=6
                required/>
 
@@ -97,7 +96,9 @@
         <h2 class="fs-subtitle">Step 2</h2>
 
         <h3 class="fs-subtitle">Enter House Info</h3>
-        <input type="text" name="city" class="form-control" ng-model="login.city" placeholder="City"
+        <input type="text" name="city" class="form-control"
+               ng-model="user.city"
+               placeholder="City"
                ng-minlength=2
                required/>
 
@@ -110,7 +111,8 @@
                 Minimum 2 chars.
             </small>
         </div>
-        <input type="text" name="postcode" class="form-control" ng-model="login.postcode"
+        <input type="text" name="postcode" class="form-control"
+               ng-model="user.post_code"
                placeholder="Post Code"
                ng-minlength=5
                ng-pattern= 'numericPattern'
@@ -133,7 +135,7 @@
             </small>
         </div>
         <input type="text" name="street" class="form-control" placeholder="Street Name"
-               ng-model="login.street"
+               ng-model="user.street_name"
                ng-minlength=5
                required/>
 
@@ -147,7 +149,7 @@
             </small>
         </div>
         <input type="text" name="street_number" class="form-control"
-               ng-model="login.street_number"
+               ng-model="user.street_number"
                placeholder="Street Number"
                required/>
 
@@ -158,7 +160,7 @@
             </small>
         </div>
         <input type="text" name="country" class="form-control" placeholder="Country"
-               ng-model="login.country"
+               ng-model="user.country"
                ng-minlength=2
                required/>
         <div class="error"

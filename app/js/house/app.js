@@ -8,6 +8,7 @@
                         controller: 'LoginController',
                         templateUrl: 'login.html',
                         css: 'css/login.css'
+
                     }).when('/house/', {
                         controller: 'MainController',
                         templateUrl: 'main.html',
@@ -18,9 +19,14 @@
         ]
     );
 
-    app.controller('MainController', ['$http', '$scope', function ($http, $scope) {
+    app.controller('MainController', ['$http', 'restFactory', '$scope', function ($http, restFactory, $scope) {
+
+        restFactory.getHouseData().success(function (data) {
+            $scope.rooms = data;
+        });
+
         /*Used for the transition of the form filling process
-        in regard to user authorization*/
+         in regard to user authorization*/
         $scope.formAuthUser = true;
         $scope.nextAuthUser = function (condition) {
             $scope.formAuthUser = condition;
@@ -34,11 +40,13 @@
                 $scope.isSwitched = true;
             }
         };
+
+
         /*Used in displaying of the devices in
-        particular room according to the tab
-        selected, including a record of the
-        last room selected, when switching
-        between panels*/
+         particular room according to the tab
+         selected, including a record of the
+         last room selected, when switching
+         between panels*/
         $scope.tab = 0;
         $scope.room = {};
         $scope.lastRoom = {};
@@ -84,13 +92,19 @@
         $scope.isAlarm = true;
 
         $scope.getActivateAlarm = function () {
-            var alarm = {"id": 1, "name": "Fire", "state": true };
+            var alarm = {"id": 1, "name": "Fire", "state": true};
             return alarm;
         };
 
         $scope.closeAlarm = function (id) {
             $scope.isAlarm = false;
         };
+
+        $scope.changeDeviceState = function (roomId, deviceId, state) {
+
+        };
+
+
     }]);
 
     app.controller('LoginController', ['$scope', '$location', '$timeout', function ($scope, $location, $timeout) {
@@ -100,6 +114,8 @@
         $scope.isAuth = false;
         $scope.emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
         $scope.numericPattern = /^\d+$/;
+        $scope.requested = false;
+        $scope.requestedState = true;
         $scope.showHouseSelector = function (condition) {
             $scope.isAuth = condition;
         };
@@ -116,8 +132,17 @@
             //$timeout(function () { $location.path("/house"); }, 3000);
             $scope.showHouseSelector(true);
         };
+
+        $scope.registerUser = function (user) {
+            houseServices.registerUser(user).success(function (data) {
+                $scope.requested = true;
+                $scope.requestedState = data.success;
+            });
+        };
         $scope.submit = function () {
-            $timeout(function () { $location.path("/house"); }, 3000);
+            $timeout(function () {
+                $location.path("/house");
+            }, 3000);
         };
     }]);
 })();

@@ -4,29 +4,25 @@
 (function () {
     'use strict';
     var app = angular.module('houseServices', []);
-    app.service('restFactory', ['$http', function ($http) {
+    app.factory('restFactory', ['$http', function ($http) {
 
-        var urlBase = '';
+        var urlBase = 'http://localhost:8081/SmartHouse-WebServices/house/';
         var dataFactory = {};
 
         dataFactory.registerUser = function (user) {
             return $http.post(urlBase, user);
         };
 
-        dataFactory.authorizeUser = function (userId, devices) {
-            return $http.post(urlBase, {userId: userId, devices: devices});
+        dataFactory.authorizeUser = function (ssn, devices) {
+            return $http.post(urlBase, {ssn: ssn, devices: devices});
         };
 
         dataFactory.authenticateUser = function (ssn, password) {
             return $http.post(urlBase, {ssn: ssn, password: password});
         };
 
-        dataFactory.getHouseData = function (houseId) {
-            return $http.get(urlBase + '/' + houseId);
-        };
-
-        dataFactory.deleteCustomer = function (id) {
-            return $http.delete(urlBase + '/' + id);
+        dataFactory.getHouseData = function () {
+            return $http.get(urlBase + 'rooms');
         };
 
         dataFactory.getOrders = function (ssn, houseId, deviceId, deviceState) {

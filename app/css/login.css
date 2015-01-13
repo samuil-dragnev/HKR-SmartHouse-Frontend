@@ -182,7 +182,7 @@ h2, h3 {
     height: 55%;
 }
 
-#login-inputs-container input, div {
+#login-inputs-container>input, #login-inputs-container>div {
     height: 25%;
 }
 .circle-container img {
@@ -210,4 +210,39 @@ h2, h3 {
 #deg315 { transform: rotate(315deg) translate(12em) rotate(-315deg); }
 .form-control{
     margin-top: 3%;
+}
+
+#overlayConfirm {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0.85);
+    z-index:9999;
+    color:white;
+}
+
+.msg-success.well, .msg-error.well  {
+    width: 50%;
+    height: 50%;
+    margin: 5% auto 5% auto;
+    color: #000000;
+    font-size: large;
+    font-style: oblique;
+    font-family: Trebuchet MS, Helvetica, Arial, sans-serif;
+}
+
+.msg-error {
+    border: 2px solid #E8A9A7;
+    -webkit-box-shadow: 0 0 20px #D9534F, inset 0 0 20px #D9534F;
+    -moz-box-shadow: 0 0 20px #D9534F, inset 0 0 20px #D9534F;
+    box-shadow: 0 0 20px #D9534F, inset 0 0 20px #D9534F;
+}
+
+.msg-success {
+    border: 2px solid #70e835;
+    -webkit-box-shadow: 0 0 20px #2aa42f, inset 0 0 20px #2aa42f;
+    -moz-box-shadow: 0 0 20px #2aa42f, inset 0 0 20px #2aa42f;
+    box-shadow: 0 0 20px #2aa42f, inset 0 0 20px #2aa42f;
 }
