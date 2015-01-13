@@ -19,6 +19,7 @@
     );
 
     app.controller('MainController', ['$http', '$scope', function ($http, $scope) {
+        $scope.isLoading = true;
         /*Used for the transition of the form filling process
         in regard to user authorization*/
         $scope.formAuthUser = true;
@@ -90,6 +91,9 @@
 
         $scope.closeAlarm = function (id) {
             $scope.isAlarm = false;
+        };
+        $scope.testAlarm = function () {
+            $scope.isAlarm = true;
         };
     }]);
 

@@ -18,7 +18,7 @@
     top: 50px;
     width: 100%;
 }
-#overlayAlarm {
+#overlayAlarm, #overlayLoading {
     position:absolute;
     top:0;
     left:0;
@@ -63,7 +63,7 @@
     margin: 10px 10px 10px 10px;
 }
 
-#admin-button {
+#admin-button, #turnonalarmbtn {
     float: right;
     margin: 10px 10px 10px 10px;
 }
@@ -152,6 +152,9 @@
     margin-bottom: 5%;
     padding: 4%;
 }
+#devicetoaddfield {
+    margin-top: 2%;
+}
 #devicetoaddfield, #roomtoaddfield {
     -webkit-box-shadow: 0 0 8px #428bca, inset 0 0 15px #428bca;
     -moz-box-shadow: 0 0 8px #428bca, inset 0 0 15px #428bca;
@@ -159,7 +162,6 @@
     border: 2px solid #428BCA;
     border-radius: 2px;
     font-family: Helvetica, Arial, sans-serif;
-    margin-top: 2%;
 }
 .addingroomwell.well {
     padding: 0;
@@ -175,7 +177,7 @@
 #selectroomlabel {
     padding-bottom: 2%;
 }
-#addroomlabel, #selectroomlabel {
+#addroomlabel, #selectroomlabel, #indoorscheckbox {
     padding: 1%;
     font-family: Consolas;
     font-size: large;
@@ -310,6 +312,174 @@
     margin-right: 40%;
 }
 /*Devices Panel*/
+#ballsWaveG{
+    margin-top: 15%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    height: 94px;
+}
+#ballscontainer {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 81px;
+}
+.ballsWaveG{
+    position:absolute;
+    background-color:#3BCC6E;
+    width:50px;
+    height:50px;
+    background-color:#3BCC6E;
+    -moz-animation-name:ballsWaveG;
+    -moz-animation-duration:1.6s;
+    -moz-animation-iteration-count:infinite;
+    -moz-border-radius:25px;
+    -webkit-animation-name:ballsWaveG;
+    -webkit-animation-duration:1.6s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-border-radius:25px;
+    -ms-animation-name:ballsWaveG;
+    -ms-animation-duration:1.6s;
+    -ms-animation-iteration-count:infinite;
+    -ms-animation-direction:linear;
+    -ms-border-radius:25px;
+    -o-animation-name:ballsWaveG;
+    -o-animation-duration:1.6s;
+    -o-animation-iteration-count:infinite;
+    -o-border-radius:25px;
+    animation-name:ballsWaveG;
+    animation-duration:1.6s;
+    animation-iteration-count:infinite;
+    border-radius:25px;
+}
+
+#ballsWaveG_1{
+    -moz-animation-delay:0.64s;
+    -webkit-animation-delay:0.64s;
+    -ms-animation-delay:0.64s;
+    -o-animation-delay:0.64s;
+    animation-delay:0.64s;
+}
+
+#ballsWaveG_2{
+    margin-left: 50px;
+    -moz-animation-delay:0.8s;
+    -webkit-animation-delay:0.8s;
+    -ms-animation-delay:0.8s;
+    -o-animation-delay:0.8s;
+    animation-delay:0.8s;
+}
+
+#ballsWaveG_3{
+    margin-left: 100px;
+    -moz-animation-delay:0.96s;
+    -webkit-animation-delay:0.96s;
+    -ms-animation-delay:0.96s;
+    -o-animation-delay:0.96s;
+    animation-delay:0.96s;
+}
+
+#ballsWaveG_4{
+    margin-left:150px;
+    -moz-animation-delay:1.12s;
+    -webkit-animation-delay:1.12s;
+    -ms-animation-delay:1.12s;
+    -o-animation-delay:1.12s;
+    animation-delay:1.12s;
+}
+
+#ballsWaveG_5{
+    margin-left:200px;
+    -moz-animation-delay:1.28s;
+    -webkit-animation-delay:1.28s;
+    -ms-animation-delay:1.28s;
+    -o-animation-delay:1.28s;
+    animation-delay:1.28s;
+}
+
+#ballsWaveG_6{
+    margin-left:250px;
+    -moz-animation-delay:1.44s;
+    -webkit-animation-delay:1.44s;
+    -ms-animation-delay:1.44s;
+    -o-animation-delay:1.44s;
+    animation-delay:1.44s;
+}
+
+#ballsWaveG_7{
+    margin-left:300px;
+    -moz-animation-delay:1.6s;
+    -webkit-animation-delay:1.6s;
+    -ms-animation-delay:1.6s;
+    -o-animation-delay:1.6s;
+    animation-delay:1.6s;
+}
+
+#ballsWaveG_8{
+    margin-left:350px;
+    -moz-animation-delay:1.76s;
+    -webkit-animation-delay:1.76s;
+    -ms-animation-delay:1.76s;
+    -o-animation-delay:1.76s;
+    animation-delay:1.76s;
+}
+
+@-moz-keyframes ballsWaveG{
+    0%{
+        background-color:#3BCC6E;
+    }
+
+    100%{
+        background-color:#3E94D6;
+    }
+
+}
+
+@-webkit-keyframes ballsWaveG{
+    0%{
+        background-color:#3BCC6E;
+    }
+
+    100%{
+        background-color:#3E94D6;
+    }
+
+}
+
+@-ms-keyframes ballsWaveG{
+    0%{
+        background-color:#3BCC6E;
+    }
+
+    100%{
+        background-color:#3E94D6;
+    }
+
+}
+
+@-o-keyframes ballsWaveG{
+    0%{
+        background-color:#3BCC6E;
+    }
+
+    100%{
+        background-color:#3E94D6;
+    }
+
+}
+
+@keyframes ballsWaveG{
+    0%{
+        background-color:#3BCC6E;
+    }
+
+    100%{
+        background-color:#3E94D6;
+    }
+
+}
 
 
 

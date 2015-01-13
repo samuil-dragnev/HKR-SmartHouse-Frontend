@@ -20,6 +20,10 @@
     height: 100%;
     width: 100%;
 }
+#noaccount:hover {
+    cursor: pointer;
+    cursor: hand;
+}
 .form-control.ng-invalid {
     border-color: rgb(237, 19, 55);
     box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset, rgba(237, 19, 55, 0.596078) 0px 0px 7.9595799446106px 0px;
