@@ -18,8 +18,12 @@
         ]
     );
 
-    app.controller('MainController', ['$http', '$scope', function ($http, $scope) {
+    app.controller('MainController', ['$http', 'restFactory', '$scope', function ($http, restFactory, $scope) {
         $scope.isLoading = true;
+        restFactory.getHouseData().success(function (data) {
+            $scope.rooms = data;
+        });
+
         /*Used for the transition of the form filling process
         in regard to user authorization*/
         $scope.formAuthUser = true;
@@ -95,6 +99,12 @@
         $scope.testAlarm = function () {
             $scope.isAlarm = true;
         };
+
+        $scope.changeDeviceState = function (roomId, deviceId, state) {
+
+        };
+
+
     }]);
 
     app.controller('LoginController', ['$scope', '$location', '$timeout', function ($scope, $location, $timeout) {
@@ -104,6 +114,8 @@
         $scope.isAuth = false;
         $scope.emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
         $scope.numericPattern = /^\d+$/;
+        $scope.requested = false;
+        $scope.requestedState = true;
         $scope.showHouseSelector = function (condition) {
             $scope.isAuth = condition;
         };
@@ -120,8 +132,17 @@
             //$timeout(function () { $location.path("/house"); }, 3000);
             $scope.showHouseSelector(true);
         };
+
+        $scope.registerUser = function (user) {
+            houseServices.registerUser(user).success(function (data) {
+                $scope.requested = true;
+                $scope.requestedState = data.success;
+            });
+        };
         $scope.submit = function () {
-            $timeout(function () { $location.path("/house"); }, 3000);
+            $timeout(function () {
+                $location.path("/house");
+            }, 3000);
         };
     }]);
 })();

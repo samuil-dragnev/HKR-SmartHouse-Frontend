@@ -1,193 +1,56 @@
 [
-    {
-        "address": "Street Name, Number Postcode City Name, Country"
-    },
-    {
-        "alarms": [
-            {
-                "name": "Door Alarm",
-                "state": true,
-                "selected": 1
-            },
-            {
-                "name": "Fire Alarm",
-                "state": false,
-                "selected": 2
-            },
-            {
-                "name": "Flood Alarm",
-                "state": false,
-                "selected": 3
-            },
-            {
-                "name": "Window Alarm",
-                "state": true,
-                "selected": 4
-            },
-            {
-                "name": "Security Alarm",
-                "state": false,
-                "selected": 5
-            }
-        ]
-    },
-    {
-        "outside": [
-            {
-                "name": "Front Door Light",
-                "state": false,
-                "selected": 1
-            },
-            {
-                "name": "Fountain",
-                "state": true,
-                "selected": 2
-            },
-            {
-                "name": "Pool Heating",
-                "state": false,
-                "selected": 3
-            }
-        ]
-    },
-    {
-        "rooms": [
-            {
-                "name": "Kitchen",
-                "devices": [
-                    {
-                        "name": "Oven",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "Fridge",
-                        "state": true,
-                        "image": ""
-                    },
-                    {
-                        "name": "Coffee Machine",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "lights",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "ventilation",
-                        "state": false,
-                        "image": ""
-                    }
-                ],
-                "selected": 1
-            },
-            {
-                "name": "Living Room",
-                "devices": [
-                    {
-                        "name": "TV",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "Lights",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "Fire Place",
-                        "state": false,
-                        "image": ""
-                    }
-                ],
-                "selected": 2
-            },
-            {
-                "name": "Master Bedroom",
-                "devices": [
-                    {
-                        "name": "Lights",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "TV",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "Vibrating Bed",
-                        "state": true,
-                        "image": ""
-                    }
-                ],
-                "selected": 3
-            },
-            {
-                "name": "Kids Bedroom",
-                "devices": [
-                    {
-                        "name": "Lights",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "TV",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "Computer",
-                        "state": false,
-                        "image": ""
-                    }
-                ],
-                "selected": 8
-            },
-            {
-                "name": "Office",
-                "devices": [
-                    {
-                        "name": "Lights",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "Computer",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "Fountain",
-                        "state": true,
-                        "image": ""
-                    }
-                ],
-                "selected": 4
-            },
-            {
-                "name": "Basement",
-                "devices": [
-                    {
-                        "name": "Lights",
-                        "state": false,
-                        "image": ""
-                    },
-                    {
-                        "name": "Washing Machine",
-                        "state": true,
-                        "image": ""
-                    },
-                    {
-                        "name": "Dryer Machine",
-                        "state": true,
-                        "image": ""
-                    }
-                ],
-                "selected": 124
-            }
-        ]
-    }
+  {
+    "address": "Street Name, Number Postcode City Name, Country"
+  },
+  {
+    "alarms": [
+      {
+        "name": "Door Alarm",
+        "state": true,
+        "selected": 1
+      },
+      {
+        "name": "Fire Alarm",
+        "state": false,
+        "selected": 2
+      },
+      {
+        "name": "Flood Alarm",
+        "state": false,
+        "selected": 3
+      },
+      {
+        "name": "Window Alarm",
+        "state": true,
+        "selected": 4
+      },
+      {
+        "name": "Security Alarm",
+        "state": false,
+        "selected": 5
+      }
+    ]
+  },
+  {
+    "outside": [
+      {
+        "name": "Front Door Light",
+        "state": false,
+        "selected": 1
+      },
+      {
+        "name": "Fountain",
+        "state": true,
+        "selected": 2
+      },
+      {
+        "name": "Pool Heating",
+        "state": false,
+        "selected": 3
+      }
+    ]
+  },
+  {
+    "rooms": []
+  }
 ]

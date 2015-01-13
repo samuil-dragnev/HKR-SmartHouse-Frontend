@@ -21,4 +21,10 @@
         <span id="dev-info">Developed by Joel Svensson & Samuil Dragnev All Rights Reserved &copy;
             <a href="http://www.hkr.se/en/education/course-page/?cCode=DA540C">Software Engineering 2 at HKR</a></span>
     </footer>
+    <div id="overlayConfirm" ng-show="requested">
+        <div ng-class="requestedState ? 'msg-success well' : 'msg-error well'">
+            <span>The {{getActivateAlarm().name}} is ON!</span>
+            <button type="button" ng-class="requestedState ? 'btn btn-lg btn-success' : 'btn btn-lg btn-danger'" ng-click="closeAlarm(getActivateAlarm().id)">OK</button>
+        </div>
+    </div>
 </div>

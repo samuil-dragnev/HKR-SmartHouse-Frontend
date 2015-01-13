@@ -29,15 +29,15 @@
                     </div>
                     <div id="tabs">
                         <div ng-show="isLocationSelected(1)" class="tab-pane active" id="interior">
-                            <ul class="nav nav-pills nav-stacked" ng-repeat="room in house[3].rooms">
-                                <li ng-class="{ active: isSelected(room.selected)}">
+                            <ul class="nav nav-pills nav-stacked" ng-repeat="room in rooms">
+                                <li ng-class="{ active: isSelected(room.id)}">
                                     <a ng-click="selectTab(room.selected); setRoom(room)">{{room.name}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div ng-show="isLocationSelected(2)" class="tab-pane" id="exterior">
                             <ul class="nav nav-pills nav-stacked" ng-repeat="out in house[2].outside">
-                                <li ng-class="{ active: isSelected(out.selected)}">
+                                <li ng-class="{ active: isSelected(out.id)}">
                                     <a ng-click="selectTab(out.selected);">{{out.name}}</a>
                                 </li>
                             </ul>
@@ -65,10 +65,10 @@
                                         <div>
                                             <div class="btn-group btn-toggle">
                                                 <button ng-class="{'active btn-success': device.state}"
-                                                        ng-click="device.state = true" class="btn btn-default">ON
+                                                        ng-click="device.state = true; changeDeviceState(room.id, device.id, true)" class="btn btn-default">ON
                                                 </button>
                                                 <button ng-class="{'active btn-danger' : !device.state}"
-                                                        ng-click="device.state = false" class="btn btn-default">OFF
+                                                        ng-click="device.state = false; changeDeviceState(room.id, device.id, false)" class="btn btn-default">OFF
                                                 </button>
                                             </div>
                                         </div>
@@ -108,25 +108,22 @@
                                             </div>
                                             <div id="fieldDeviceSelect" ng-hide="formAuthUser">
                                                 <label for="deviceSelect">Select Devices</label>
-
                                                 <div style="height: 75%; padding-bottom: 0.5%">
                                                     <select id="deviceSelect" multiple>
-                                                        <optgroup label="{{room.name}}"
-                                                                  ng-repeat="room in house[3].rooms">
+                                                        <optgroup label="{{room.name}}" ng-repeat="room in house[3].rooms">
                                                             <option value="1" ng-repeat="device in room.devices">
                                                                 <span>{{device.name}}</span>
                                                             </option>
                                                         </optgroup>
                                                     </select>
                                                 </div>
-                                                <div style="padding-bottom: 1%"><span>*Press Ctrl to select multiple devices.</span>
-                                                </div>
+                                                <div style="padding-bottom: 1%"><span>*Press Ctrl to select multiple devices.</span></div>
                                                 <button class="btn btn-lg btn-warning" ng-click="nextAuthUser(true)"
                                                         name="back-auth" id="back-auth">
                                                     Back
                                                 </button>
                                                 <button class="btn btn-lg btn-primary" ng-click="nextAuthUser(true)"
-                                                        name="submit" id="submit-auth">
+                                                    name="submit" id="submit-auth">
                                                     Approve
                                                 </button>
                                             </div>
@@ -225,8 +222,7 @@
     <div class="alarmMessage well">
         <span>The {{getActivateAlarm().name}} is ON!</span>
     </div>
-    <button type="button" class="btn btn-lg btn-danger" ng-click="closeAlarm(getActivateAlarm().id)">Turn Off
-    </button>
+    <button type="button" class="btn btn-lg btn-danger" ng-click="closeAlarm(getActivateAlarm().id)">Turn Off</button>
 </div>
 <!--
 Images data:;base64,
@@ -234,3 +230,4 @@ Images data:;base64,
   <source src="" type="audio/mp3">
 </audio>
 -->
+
