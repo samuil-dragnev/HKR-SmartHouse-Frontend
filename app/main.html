@@ -1,11 +1,11 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topBar">
     <div class="container">
         <a id="logo" href="index.html"><img src="img/logo.png" width="30" height="30"></a>
-        <span id="address">{{house[0].address}}</span>
+        <span id="address">Hello {{user.first_name}} {{user.last_name}}  </span>
         <button class="btn btn-sm btn-warning" name="logout" ng-click="logout()" title="logout" id="logOutBtn">
             <span class="glyphicon glyphicon-off"></span> Log Out
         </button>
-        <button class="btn btn-sm btn-warning" name="Admin Page" ng-click="showAdmin()" title="adminpage"
+        <button ng-show="user.admin" class="btn btn-sm btn-warning" name="Admin Page" ng-click="showAdmin()" title="adminpage"
                 id="admin-button">
             <span class="glyphicon glyphicon-wrench"></span> Admin
         </button>
@@ -29,14 +29,14 @@
                     </div>
                     <div id="tabs">
                         <div ng-show="isLocationSelected(1)" class="tab-pane active" id="interior">
-                            <ul class="nav nav-pills nav-stacked" ng-repeat="room in rooms">
+                            <ul class="nav nav-pills nav-stacked" ng-repeat="room in rooms | filter:{ indoors: true }">
                                 <li ng-class="{ active: isSelected(room.id)}">
                                     <a ng-click="selectTab(room.selected); setRoom(room)">{{room.name}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div ng-show="isLocationSelected(2)" class="tab-pane" id="exterior">
-                            <ul class="nav nav-pills nav-stacked" ng-repeat="out in house[2].outside">
+                            <ul class="nav nav-pills nav-stacked" ng-repeat="room in rooms | filter:{ indoors: true }">
                                 <li ng-class="{ active: isSelected(out.id)}">
                                     <a ng-click="selectTab(out.selected);">{{out.name}}</a>
                                 </li>
@@ -65,10 +65,12 @@
                                         <div>
                                             <div class="btn-group btn-toggle">
                                                 <button ng-class="{'active btn-success': device.state}"
-                                                        ng-click="device.state = true; changeDeviceState(room.id, device.id, true)" class="btn btn-default">ON
+                                                        ng-click="changeDeviceState(room.id, device.id, true)"
+                                                        class="btn btn-default">ON
                                                 </button>
                                                 <button ng-class="{'active btn-danger' : !device.state}"
-                                                        ng-click="device.state = false; changeDeviceState(room.id, device.id, false)" class="btn btn-default">OFF
+                                                        ng-click="changeDeviceState(room.id, device.id, false)"
+                                                        class="btn btn-default">OFF
                                                 </button>
                                             </div>
                                         </div>
@@ -96,8 +98,8 @@
                                                 <label for="userSelect">Select a User</label>
 
                                                 <div>
-                                                    <select id="userSelect">
-                                                        <option value="1"><span>Name:</span> <span>Email:</span>
+                                                    <select id="userSelect" ng-model="userId">
+                                                        <option value="1" ng-repeat="unUser in unAuthUsers" ><span>{{unUser.first_name}} {{unUser.last_name}}</span> <span>Email: {{unUser.email}}</span>
                                                         </option>
                                                     </select>
                                                 </div>
@@ -106,24 +108,25 @@
                                                     Next
                                                 </button>
                                             </div>
-                                            <div id="fieldDeviceSelect" ng-hide="formAuthUser">
+                                            <div id="fieldDeviceSelect" ng-hide="formAuthUser" ng-submit="authorizeUserByAdmin(unUser.ssn, ids)">
                                                 <label for="deviceSelect">Select Devices</label>
                                                 <div style="height: 75%; padding-bottom: 0.5%">
                                                     <select id="deviceSelect" multiple>
-                                                        <optgroup label="{{room.name}}" ng-repeat="room in house[3].rooms">
-                                                            <option value="1" ng-repeat="device in room.devices">
+                                                        <optgroup label="{{room.name}}" ng-repeat="room in rooms ">
+                                                            <option value="{{room.id}}" ng-repeat="device in room.devices">
                                                                 <span>{{device.name}}</span>
                                                             </option>
                                                         </optgroup>
                                                     </select>
                                                 </div>
-                                                <div style="padding-bottom: 1%"><span>*Press Ctrl to select multiple devices.</span></div>
+                                                <div style="padding-bottom: 1%"><span>*Press Ctrl to select multiple devices.</span>
+                                                </div>
                                                 <button class="btn btn-lg btn-warning" ng-click="nextAuthUser(true)"
                                                         name="back-auth" id="back-auth">
                                                     Back
                                                 </button>
                                                 <button class="btn btn-lg btn-primary" ng-click="nextAuthUser(true)"
-                                                    name="submit" id="submit-auth">
+                                                        name="submit" id="submit-auth">
                                                     Approve
                                                 </button>
                                             </div>
@@ -136,43 +139,38 @@
                             </td>
                             <td>
                                 <div id="adding">
-                                    <div id="addingdevicewell well" style="height: 70%;">
-                                        <label id="selectroomlabel" for="selectRoom">This is where you add a device to a
-                                            room</label>
+                                    <div id="addingdevicewell well" style="height: 60%;">
+                                        <span id="selectroomlabel" for="selectRoom">Add a device to a room</span>
 
                                         <div id="selectRoom" style="padding-bottom: 0.5%; height:90%;">
-                                            <select style="padding: 2%; height: 80%;" id="roomselect" multiple>
-                                                <option id="optionrooms" style="padding: 2%;" value="1"
-                                                        ng-repeat="room in house[3].rooms">{{room.name}}
-                                                </option>
-                                            </select>
-
-                                            <div>
-                                                <form style="padding: 1%;" name="addDevice_form" role="form" novalidate
-                                                      ng-submit="">
-                                                    <div>
-                                                        <input id="devicetoaddfield" type="text"
-                                                               placeholder="Device to Add">
-                                                        <input id="adddevicebtn" class="btn btn-lg btn-primary btn-sm"
-                                                               type="submit" value="Add Device">
-                                                    </div>
-                                                </form>
-                                            </div>
+                                            <form style="padding: 1%; height: 90%;" name="addDevice_form" role="form"
+                                                  novalidate
+                                                  ng-submit="addADevice(roomId[0].id, device_name)">
+                                                <select style="padding: 2%; height: 80%;" id="roomselect" multiple
+                                                        ng-model="roomId" ng-options="room.name for room in rooms">
+                                                </select>
+                                                <div>
+                                                    <input id="devicetoaddfield" ng-model="device_name" type="text"
+                                                           placeholder="Device's Name">
+                                                    <input id="adddevicebtn" class="btn btn-lg btn-primary btn-sm"
+                                                           type="submit" value="Add Device">
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
 
                                     <div class="addingroomwell well" style="height: 25%; margin-top: 5%;">
-                                        <label id="addroomlabel" style="padding: 1%;">This is where you add a
-                                            room</label>
+                                        <label id="addroomlabel" style="padding: 1%;">Add A Room</label>
 
                                         <form name="addRoom_form" role="form" novalidate
-                                              ng-submit="">
+                                              ng-submit="addARoom(roomName, isIndoors)">
                                             <div>
                                                 <label id="indoorscheckbox" for="checkbox">Is indoors</label>
-                                                <input type="checkbox" id="checkbox"/>
+                                                <input type="checkbox" ng-model="isIndoors" id="checkbox"/>
                                             </div>
                                             <div>
-                                                <input id="roomtoaddfield" type="text" placeholder="Room to Add">
+                                                <input id="roomtoaddfield" ng-model="roomName" type="text"
+                                                       placeholder="Room's Name">
                                                 <input id="addroombtn" class="btn btn-lg btn-primary btn-sm"
                                                        type="submit" value="Add Room">
                                             </div>
@@ -192,8 +190,9 @@
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom" id="bottomBar" role="navigation">
     <div class="container">
-        <span id="info">Some stuff</span>
-        <!--<button id="turnonalarmbtn" type="button" class="btn btn-warning btn-xs" ng-click="testAlarm()">Test Alarm</button> -->
+        <span id="info">Live Updates</span>
+        <button id="turnonalarmbtn" type="button" class="btn btn-warning btn-xs" ng-click="testAlarm()">Test Alarm
+        </button>
     </div>
 </nav>
 <div id="overlayLoading" ng-show="isLoading">

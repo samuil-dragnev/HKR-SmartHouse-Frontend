@@ -3,32 +3,54 @@
  */
 (function () {
     'use strict';
-    var app = angular.module('houseServices', []);
-    app.factory('restFactory', ['$http', function ($http) {
+    var app = angular.module('houseServices', []).service('restFactory', ['$http', function ($http) {
 
         var urlBase = 'http://localhost:8081/SmartHouse-WebServices/house/';
-        var dataFactory = {};
 
-        dataFactory.registerUser = function (user) {
-            return $http.post(urlBase, user);
+        this.registerUsers = function (user) {
+            return $http.post(urlBase + "register", user);
         };
 
-        dataFactory.authorizeUser = function (ssn, devices) {
-            return $http.post(urlBase, {ssn: ssn, devices: devices});
+        this.authorizeUser = function (ssn, devices) {
+            return $http.post(urlBase + "authorize", {ssn: ssn, devices: devices});
         };
 
-        dataFactory.authenticateUser = function (ssn, password) {
-            return $http.post(urlBase, {ssn: ssn, password: password});
+        this.authenticateUsers = function (ssn, password) {
+            return $http.post(urlBase + "user", {ssn: ssn, password: password});
         };
 
-        dataFactory.getHouseData = function () {
+        this.getHouseData = function () {
             return $http.get(urlBase + 'rooms');
         };
 
-        dataFactory.getOrders = function (ssn, houseId, deviceId, deviceState) {
-            return $http.post(urlBase + '/' + ssn + '/' + '/' + houseId + '/' +deviceId, deviceState);
+        this.getUnAuthUsers = function () {
+            return $http.get(urlBase + 'unauth');
         };
 
-        return dataFactory;
-    }]);
+        this.getUserById = function (ssn) {
+            return $http.get(urlBase + 'user/' + ssn);
+        };
+
+        this.addDevice = function (roomId, deviceName) {
+            return $http.post(urlBase + 'rooms/devices/', {roomId: roomId, name: deviceName});
+        };
+
+        this.addRoom = function (name, locale) {
+            return $http.post(urlBase + 'rooms/add', {name: name, indoors: locale});
+        };
+
+        this.toggleDevice = function (deviceId, deviceState) {
+            return $http.post(urlBase + "device", {id: deviceId, state: deviceState});
+        };
+    }]).service('userService', function () {
+        var user = {};
+
+        this.setUser = function (newObj) {
+            user = newObj;
+        }
+
+        this.getUser = function(){
+            return user;
+        }
+    });
 })();

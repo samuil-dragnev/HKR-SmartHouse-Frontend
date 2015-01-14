@@ -234,10 +234,16 @@
 #deviceSelect option:hover {
     background-color: #A2C4E1;
 }
-#pending {
+#pending, #addingdevicewell {
     display: inline-block;
     width: 100%;
     height: 100%;
+}
+
+#addingdevicewell {
+    display: inline-block;
+    width: 100%;
+    height: 90%;
 }
 #authUser {
     display: inline-block;
@@ -251,6 +257,12 @@
 }
 #fieldUserSelect {
     padding-top: 20%;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: #ABD2ED;
+    color: #ffffff;
 }
 #fieldDeviceSelect {
     display: inline-block;

@@ -1,5 +1,5 @@
 <form class="form-sign-in" name="login_form" role="form" novalidate
-      ng-submit="">
+      ng-submit="login(ssn,password)">
     <h2 class="form-sign-in-heading">Please sign in</h2>
     <div id="login-inputs-container">
         <input type="text"
@@ -9,7 +9,7 @@
                ng-minlength=10
                ng-maxlength=10
                ng-pattern= 'numericPattern'
-               ng-model="login.ssn"
+               ng-model="ssn"
                required/>
 
         <div class="error"
@@ -31,7 +31,7 @@
                class="form-control"
                placeholder="Password"
                name="password"
-               ng-model="login.password"
+               ng-model="password"
                ng-minlength=6
                required>
 
@@ -47,7 +47,7 @@
     </div>
     <div>
         <button class="btn btn-lg btn-primary btn-block"
-                type="submit" ng-click="authenticate(); console.log('test')"
+                type="submit"
                 ng-disabled="login_form.$invalid">Sign in
         </button>
         <div>
